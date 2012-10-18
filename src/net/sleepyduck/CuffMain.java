@@ -207,7 +207,6 @@ public class CuffMain extends javax.swing.JFrame {
 		if (option == JFileChooser.APPROVE_OPTION) {
 			try {
 				Builder parser = new Builder();
-				File tmp = fileChooser.getSelectedFile();
 				FileInputStream fis = new FileInputStream(fileChooser.getSelectedFile());
 				Document doc = parser.build(fis);
 				Element root = doc.getRootElement();

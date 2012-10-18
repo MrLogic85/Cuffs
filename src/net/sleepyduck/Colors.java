@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -20,8 +21,11 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import nu.xom.Attribute;
+import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Elements;
+import nu.xom.ParsingException;
 import nu.xom.Serializer;
 
 /**
@@ -53,7 +57,6 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		}, null);
 
 		try {
-			load(); // TODO, remove
 			addEraseColor();
 			load();
 		} catch (IOException ex) {
@@ -128,8 +131,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		colorPanel.add(color);
 		colorPanel.revalidate();
 		colorPanel.repaint();
-		if (colorsLoaded)
-			save();
+		save();
 	}
 
 	public void removeSelectedColor() {
@@ -140,6 +142,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				lastColor = null;
 				colorPanel.validate();
 				colorPanel.repaint();
+				save();
 			}
 		}
 	}
@@ -276,38 +279,66 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
     // End of variables declaration//GEN-END:variables
 
 	private void save() {
-		Element cuffEle, color;
-		Element root = new Element("Colors");
-		Component cmp;
-		CuffColor cuff;
-		for (int i = 0; i < colorPanel.getComponentCount(); ++i) {
-			cmp = colorPanel.getComponent(i);
-			if (cmp instanceof CuffColor && !(cmp instanceof EraseColor)) {
-				cuff = (CuffColor) cmp;
-				cuffEle = new Element("CuffColor");
-				cuffEle.addAttribute(new Attribute("name", cuff.getToolTipText()));
-				color = new Element("Color");
-				color.addAttribute(new Attribute("red", "" + cuff.getBackground().getRed()));
-				color.addAttribute(new Attribute("green", "" + cuff.getBackground().getGreen()));
-				color.addAttribute(new Attribute("blue", "" + cuff.getBackground().getBlue()));
-				cuffEle.appendChild(color);
-				root.appendChild(cuffEle);
+		if (colorsLoaded) {
+			Element cuffEle, color;
+			Element root = new Element("Colors");
+			Component cmp;
+			CuffColor cuff;
+			for (int i = 0; i < colorPanel.getComponentCount(); ++i) {
+				cmp = colorPanel.getComponent(i);
+				if (cmp instanceof CuffColor && !(cmp instanceof EraseColor)) {
+					cuff = (CuffColor) cmp;
+					cuffEle = new Element("CuffColor");
+					cuffEle.addAttribute(new Attribute("name", cuff.getToolTipText()));
+					color = new Element("Color");
+					color.addAttribute(new Attribute("red", "" + cuff.getBackground().getRed()));
+					color.addAttribute(new Attribute("green", "" + cuff.getBackground().getGreen()));
+					color.addAttribute(new Attribute("blue", "" + cuff.getBackground().getBlue()));
+					cuffEle.appendChild(color);
+					root.appendChild(cuffEle);
+				}
 			}
-		}
-		try {
-			Document doc = new Document(root);
-			File theFileToSave = new File("settings.ini");
-			theFileToSave.createNewFile();
-			Serializer serializer = new Serializer(new FileOutputStream(theFileToSave), "ISO-8859-1");
-			serializer.setIndent(4);
-			serializer.setMaxLength(64);
-			serializer.write(doc);
-		} catch (IOException ex) {
-			Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
+			try {
+				Document doc = new Document(root);
+				File file = new File("settings.ini");
+				file.createNewFile();
+				Serializer serializer = new Serializer(new FileOutputStream(file), "ISO-8859-1");
+				serializer.setIndent(4);
+				serializer.setMaxLength(64);
+				serializer.write(doc);
+			} catch (IOException ex) {
+				Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
+			}
 		}
 	}
 
 	private void load() {
-		colorsLoaded = true;
+		try {
+			File file = new File("settings.ini");
+			if (file.exists()) {
+				Builder parser = new Builder();
+				FileInputStream fis = new FileInputStream(file);
+				Document doc = parser.build(fis);
+
+				Element cuffEle, color;
+				int r, g, b;
+				Element root = doc.getRootElement();
+				CuffColor cuff;
+				Elements elements = root.getChildElements("CuffColor");
+				for (int i = 0; i < elements.size(); ++i) {
+					cuffEle = elements.get(i);
+					cuff = new CuffColor();
+					color = cuffEle.getFirstChildElement("Color");
+					r = Integer.parseInt(color.getAttributeValue("red"));
+					g = Integer.parseInt(color.getAttributeValue("green"));
+					b = Integer.parseInt(color.getAttributeValue("blue"));
+					cuff.setColor(new Color(r, g, b));
+					addNewColor(cuff, cuffEle.getAttributeValue("name"));
+				}
+			}
+			colorsLoaded = true;
+		} catch (ParsingException | IOException ex) {
+			Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	}
 }

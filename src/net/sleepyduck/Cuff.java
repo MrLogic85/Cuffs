@@ -299,7 +299,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		yarn = new Color[rows][worms];
 		beads = new Color[rows][worms-1];
 
-		tmp = root.getChildElements("Yarn").get(0);
+		tmp = root.getFirstChildElement("Yarn");
 		repeatYarnH = Integer.parseInt(tmp.getAttributeValue("repeatH"));
 		repeatYarnV = Integer.parseInt(tmp.getAttributeValue("repeatV"));
 		mirrorYarnHCheckbox.setSelected(Boolean.parseBoolean(tmp.getAttributeValue("mirrorH")));
@@ -309,14 +309,14 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 				pos = elements.get(i);
 				row = Integer.parseInt(pos.getAttributeValue("row"));
 				col = Integer.parseInt(pos.getAttributeValue("col"));
-				color = pos.getChildElements("Color").get(0);
+				color = pos.getFirstChildElement("Color");
 				red = Integer.parseInt(color.getAttributeValue("red"));
 				green = Integer.parseInt(color.getAttributeValue("green"));
 				blue = Integer.parseInt(color.getAttributeValue("blue"));
 				yarn[row][col] = new Color(red, green, blue);
 		}
 
-		tmp = root.getChildElements("Beads").get(0);
+		tmp = root.getFirstChildElement("Beads");
 		repeatBeadsH = Integer.parseInt(tmp.getAttributeValue("repeatH"));
 		repeatBeadsV = Integer.parseInt(tmp.getAttributeValue("repeatV"));
 		mirrorBeadsHCheckbox.setSelected(Boolean.parseBoolean(tmp.getAttributeValue("mirrorH")));
@@ -326,7 +326,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 				pos = elements.get(i);
 				row = Integer.parseInt(pos.getAttributeValue("row"));
 				col = Integer.parseInt(pos.getAttributeValue("col"));
-				color = pos.getChildElements("Color").get(0);
+				color = pos.getFirstChildElement("Color");
 				red = Integer.parseInt(color.getAttributeValue("red"));
 				green = Integer.parseInt(color.getAttributeValue("green"));
 				blue = Integer.parseInt(color.getAttributeValue("blue"));
