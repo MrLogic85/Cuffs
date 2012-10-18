@@ -6,21 +6,17 @@ package net.sleepyduck;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.plaf.BorderUIResource;
 
 /**
  *
@@ -28,8 +24,8 @@ import javax.swing.plaf.BorderUIResource;
  */
 public class Colors extends javax.swing.JPanel implements MouseListener {
 
-	private MuddColor lastColor;
-	private MuddColor colorToChange;
+	private CuffColor lastColor;
+	private CuffColor colorToChange;
 	private JColorChooser colorChooser;
 	private final JDialog dlg;
 
@@ -38,7 +34,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 	 */
 	public Colors() {
 		initComponents();
-		colorPanel.setLayout(new WrapLayout(0, 2, 2));
+		//colorPanel.setLayout(new WrapLayout(0, 2, 2));
 
 		colorChooser = new JColorChooser();
 		colorChooser.setPreviewPanel(new JPanel());
@@ -54,10 +50,6 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		} catch (IOException ex) {
 			Logger.getLogger(Colors.class.getName()).log(Level.SEVERE, null, ex);
 		}
-
-		pushNewColor("Red");
-		pushNewColor("Blue");
-		pushNewColor("Green");
 	}
 
 	public Color getSelectedColor() {
@@ -68,7 +60,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 	}
 
 	private void addEraseColor() throws IOException {
-		MuddColor color = new EraseColor();
+		CuffColor color = new EraseColor();
 		addNewColor(color, "Erase");
 	}
 
@@ -80,8 +72,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 	}
 
 	private void pushNewColor(String text) {
-		MuddColor color = new MuddColor();
-		addNewColor(color, text);
+		CuffColor color = new CuffColor();
 		// <editor-fold defaultstate="collapsed" desc="Lots of colors">
 		switch (text.toLowerCase()) {
 			case "red":
@@ -119,15 +110,12 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				selectColor(color);
 		}
 		// </editor-fold>
+		addNewColor(color, text);
 	}
 
-	private void addNewColor(MuddColor color, String tooltipText) {
-		color.setSize(8, 8);
+	private void addNewColor(CuffColor color, String tooltipText) {
 		color.addMouseListener(this);
-		color.setBackground(Color.WHITE);
 		color.setToolTipText(tooltipText);
-		color.setIsYarnSelected(false);
-		color.setIsBeadSelected(false);
 		colorPanel.add(color);
 		colorPanel.revalidate();
 		colorPanel.repaint();
@@ -145,24 +133,24 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		}
 	}
 
-	private void selectColor(MuddColor color) {
+	private void selectColor(CuffColor color) {
 		colorToChange = color;
 		dlg.setVisible(true);
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent me) {
-		if (me.getComponent() instanceof MuddColor) {
+		if (me.getComponent() instanceof CuffColor) {
 			if (me.isControlDown()) {
-				if (me.getComponent() instanceof MuddColor && !(me.getComponent() instanceof EraseColor)) {
-					MuddColor color = (MuddColor) me.getComponent();
+				if (me.getComponent() instanceof CuffColor && !(me.getComponent() instanceof EraseColor)) {
+					CuffColor color = (CuffColor) me.getComponent();
 					selectColor(color);
 				}
 			} else if (me.getButton() == MouseEvent.BUTTON1) {
 				if (lastColor != null) {
 					lastColor.setIsYarnSelected(false);
 				}
-				lastColor = (MuddColor) me.getComponent();
+				lastColor = (CuffColor) me.getComponent();
 				lastColor.setIsYarnSelected(true);
 			}
 		}
@@ -185,10 +173,10 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 	}
 
 	String geColorName(Color color) {
-		MuddColor mudd;
+		CuffColor mudd;
 		for (Component comp : colorPanel.getComponents()) {
-			if (comp instanceof MuddColor) {
-				mudd = (MuddColor) comp;
+			if (comp instanceof CuffColor) {
+				mudd = (CuffColor) comp;
 				if (mudd.getToolTipText() != null && mudd.getToolTipText().length() > 0) {
 					if (mudd.getBackground() != null) {
 						if (mudd.getBackground().equals(color)) {
@@ -199,48 +187,6 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 			}
 		}
 		return null;
-	}
-
-	private class MuddColor extends JPanel {
-
-		private boolean _isBeadSelected;
-
-		private void setIsBeadSelected(boolean b) {
-			_isBeadSelected = b;
-			repaint();
-		}
-
-		private void setIsYarnSelected(boolean b) {
-			setBorder(new BorderUIResource.LineBorderUIResource(b ? Color.BLACK : getBackground(), 2));
-		}
-
-		@Override
-		public void paint(Graphics graphics) {
-			super.paint(graphics);
-			if (_isBeadSelected) {
-				graphics.setColor(Color.BLACK);
-				graphics.drawOval(getWidth() / 2 - 4, getHeight() / 2 - 4, 7, 7);
-			}
-		}
-
-		private void setColor(Color color) {
-			setBackground(color);
-		}
-	}
-
-	private class EraseColor extends MuddColor {
-
-		BufferedImage image;
-
-		public EraseColor() throws IOException {
-			image = ImageIO.read(getClass().getResource("/icons/Erase.png"));
-		}
-
-		@Override
-		public void paint(Graphics graphics) {
-			super.paint(graphics);
-			graphics.drawImage(image, 2, 2, null);
-		}
 	}
 
 	/**
@@ -258,16 +204,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 
         setMinimumSize(new java.awt.Dimension(200, 200));
 
-        javax.swing.GroupLayout colorPanelLayout = new javax.swing.GroupLayout(colorPanel);
-        colorPanel.setLayout(colorPanelLayout);
-        colorPanelLayout.setHorizontalGroup(
-            colorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        colorPanelLayout.setVerticalGroup(
-            colorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 172, Short.MAX_VALUE)
-        );
+        colorPanel.setLayout(new net.sleepyduck.WrapLayout());
 
         addColorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Plus.png"))); // NOI18N
         addColorButton.setToolTipText("Add new color");
@@ -309,7 +246,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
                     .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
-                .addComponent(colorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(colorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                 .addGap(3, 3, 3))
         );
     }// </editor-fold>//GEN-END:initComponents
