@@ -83,8 +83,6 @@ public class CuffMain extends javax.swing.JFrame {
         jTabbedPaneCuffs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTabbedPaneCuffs.addTab("Tab 1", cuffTab1);
 
-        colors.setPreferredSize(new java.awt.Dimension(200, 200));
-
         jMenuFile.setText("File");
 
         jMenuItemCreateTab.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));

@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +19,10 @@ import javax.swing.JColorChooser;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import nu.xom.Attribute;
+import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.Serializer;
 
 /**
  *
@@ -28,6 +34,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 	private CuffColor colorToChange;
 	private JColorChooser colorChooser;
 	private final JDialog dlg;
+	private boolean colorsLoaded = false;
 
 	/**
 	 * Creates new form Colors
@@ -46,7 +53,9 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		}, null);
 
 		try {
+			load(); // TODO, remove
 			addEraseColor();
+			load();
 		} catch (IOException ex) {
 			Logger.getLogger(Colors.class.getName()).log(Level.SEVERE, null, ex);
 		}
@@ -119,6 +128,8 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		colorPanel.add(color);
 		colorPanel.revalidate();
 		colorPanel.repaint();
+		if (colorsLoaded)
+			save();
 	}
 
 	public void removeSelectedColor() {
@@ -263,4 +274,40 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
     private javax.swing.JPanel colorPanel;
     private javax.swing.JButton removeColorButton;
     // End of variables declaration//GEN-END:variables
+
+	private void save() {
+		Element cuffEle, color;
+		Element root = new Element("Colors");
+		Component cmp;
+		CuffColor cuff;
+		for (int i = 0; i < colorPanel.getComponentCount(); ++i) {
+			cmp = colorPanel.getComponent(i);
+			if (cmp instanceof CuffColor && !(cmp instanceof EraseColor)) {
+				cuff = (CuffColor) cmp;
+				cuffEle = new Element("CuffColor");
+				cuffEle.addAttribute(new Attribute("name", cuff.getToolTipText()));
+				color = new Element("Color");
+				color.addAttribute(new Attribute("red", "" + cuff.getBackground().getRed()));
+				color.addAttribute(new Attribute("green", "" + cuff.getBackground().getGreen()));
+				color.addAttribute(new Attribute("blue", "" + cuff.getBackground().getBlue()));
+				cuffEle.appendChild(color);
+				root.appendChild(cuffEle);
+			}
+		}
+		try {
+			Document doc = new Document(root);
+			File theFileToSave = new File("settings.ini");
+			theFileToSave.createNewFile();
+			Serializer serializer = new Serializer(new FileOutputStream(theFileToSave), "ISO-8859-1");
+			serializer.setIndent(4);
+			serializer.setMaxLength(64);
+			serializer.write(doc);
+		} catch (IOException ex) {
+			Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+
+	private void load() {
+		colorsLoaded = true;
+	}
 }

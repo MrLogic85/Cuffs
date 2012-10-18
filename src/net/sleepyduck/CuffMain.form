@@ -146,11 +146,6 @@
       </SubComponents>
     </Container>
     <Component class="net.sleepyduck.Colors" name="colors">
-      <Properties>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[200, 200]"/>
-        </Property>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
