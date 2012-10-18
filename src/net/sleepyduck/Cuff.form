@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+        <EtchetBorder/>
+      </Border>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,44,0,0,1,-112"/>
+  </AuxValues>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="name">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameKeyTyped"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="widthButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Width (20)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="widthButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="heightButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Height (10)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="heightButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="repeatYarnHButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repeat Yarn H (5)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="repeatYarnHButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="repeatYarnVButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repeat Yarn V (0)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="repeatYarnVButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="mirrorYarnHCheckbox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mirror Yarn H"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorYarnHCheckboxMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="mirrorYarnVCheckbox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mirror Yarn V"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorYarnVCheckboxMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="repeatBeadsHButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repeat Beads H (5)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="repeatBeadsHButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="repeatBeadsVButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repeat Beads V (0)"/>
+        <Property name="actionCommand" type="java.lang.String" value="Repeat Yarn V (0)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="repeatBeadsVButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="mirrorBeadsHCheckbox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mirror Beads H"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorBeadsHCheckboxMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="mirrorBeadsVCheckbox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mirror Beads V"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorBeadsVCheckboxMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="getBeadPatternButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Get Bead Order"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="getBeadPatternButtonMouseClicked"/>
+      </Events>
+    </Component>
+  </SubComponents>
+  <LayoutCode>
+    <CodeStatement>
+      <CodeExpression id="1">
+        <ExpressionOrigin>
+          <ExpressionProvider type="ComponentRef">
+            <ComponentRef name="."/>
+          </ExpressionProvider>
+        </ExpressionOrigin>
+      </CodeExpression>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="2">
+          <ExpressionOrigin>
+            <ExpressionProvider type="CodeConstructor">
+              <CodeConstructor class="net.sleepyduck.WrapLayout" parameterTypes=""/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="3_name">
+          <CodeVariable name="name" type="8194" declaredType="javax.swing.JTextField"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="name"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="4_widthButton">
+          <CodeVariable name="widthButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="widthButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="5_heightButton">
+          <CodeVariable name="heightButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="heightButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="6_repeatYarnHButton">
+          <CodeVariable name="repeatYarnHButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="repeatYarnHButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="7_repeatYarnVButton">
+          <CodeVariable name="repeatYarnVButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="repeatYarnVButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="8_mirrorYarnHCheckbox">
+          <CodeVariable name="mirrorYarnHCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="mirrorYarnHCheckbox"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="9_mirrorYarnVCheckbox">
+          <CodeVariable name="mirrorYarnVCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="mirrorYarnVCheckbox"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="10_repeatBeadsHButton">
+          <CodeVariable name="repeatBeadsHButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="repeatBeadsHButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="11_repeatBeadsVButton">
+          <CodeVariable name="repeatBeadsVButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="repeatBeadsVButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="12_mirrorBeadsHCheckbox">
+          <CodeVariable name="mirrorBeadsHCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="mirrorBeadsHCheckbox"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="13_mirrorBeadsVCheckbox">
+          <CodeVariable name="mirrorBeadsVCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="mirrorBeadsVCheckbox"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="14_getBeadPatternButton">
+          <CodeVariable name="getBeadPatternButton" type="8194" declaredType="javax.swing.JButton"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="getBeadPatternButton"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+  </LayoutCode>
+</Form>
