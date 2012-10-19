@@ -60,6 +60,11 @@ public class CuffColor extends javax.swing.JPanel {
 		setBorder(new BorderUIResource.LineBorderUIResource(_isYarnSelected ? Color.BLACK : color, _borderThickness));
 	}
 
+	@Override
+	public String toString() {
+		return getToolTipText();
+	}
+	
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always

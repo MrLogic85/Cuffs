@@ -26,7 +26,7 @@
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameKeyTyped"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameKeyReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="widthButton">

@@ -18,27 +18,30 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jSlider" min="-2" pref="253" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="valueLabel" min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSpinner1" pref="50" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
+      <Group type="103" groupAlignment="1" attributes="0">
           <Component id="jSlider" min="-2" max="-2" attributes="0"/>
-          <Component id="valueLabel" min="-2" max="-2" attributes="0"/>
+          <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JSlider" name="jSlider">
-    </Component>
-    <Component class="javax.swing.JLabel" name="valueLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="100"/>
-      </Properties>
       <BindingProperties>
-        <BindingProperty name="text" source="jSlider" sourcePath="${value}" target="valueLabel" targetPath="text" updateStrategy="0" immediately="false"/>
+        <BindingProperty name="value" source="jSpinner1" sourcePath="${value}" target="jSlider" targetPath="value" updateStrategy="0" immediately="false">
+          <BindingParameter name="IGNORE_ADJUSTING" value="N"/>
+        </BindingProperty>
+      </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinner1">
+      <BindingProperties>
+        <BindingProperty name="value" source="jSlider" sourcePath="${value}" target="jSpinner1" targetPath="value" updateStrategy="0" immediately="false"/>
       </BindingProperties>
     </Component>
   </SubComponents>

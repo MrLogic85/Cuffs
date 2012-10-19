@@ -5,7 +5,15 @@
 package net.sleepyduck;
 
 import java.awt.Component;
+import java.awt.List;
 import java.nio.file.Path;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Vector;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Elements;
@@ -14,32 +22,75 @@ import nu.xom.Elements;
  *
  * @author MetcalfPriv
  */
-public class CuffTab extends javax.swing.JPanel {
-	
+public class CuffTab extends javax.swing.JPanel implements ListSelectionListener, ChangeListener {
+
 	private Path filePath;
+	private Vector<Cuff> cuffs;
+	private Deque<CuffState> cuffStatesUndo = new LinkedList<>();
+	private Deque<CuffState> cuffStatesRedo = new LinkedList<>();
 
 	/**
 	 * Creates new form MuddTab
 	 */
 	public CuffTab() {
 		initComponents();
+		cuffs = new Vector<>();
+		cuffList.addListSelectionListener(this);
 	}
-	
+
 	public void add(Cuff cuff) {
-		jPanelInner.add(cuff);
+		cuffs.add(cuff);
+		cuff.addChangeListener(this);
+		cuffList.setListData(cuffs);
+		cuffList.setSelectedIndex(cuffs.size() - 1);
 		validate();
 	}
-	
+
+	@Override
+	public void valueChanged(ListSelectionEvent lse) {
+		jPanelInner.removeAll();
+		for (int i : cuffList.getSelectedIndices()) {
+			if (i < cuffList.getModel().getSize()) {
+				jPanelInner.add((Cuff) cuffList.getModel().getElementAt(i));
+			}
+		}
+		revalidate();
+		repaint();
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent ce) {
+		if (ce.getSource() instanceof Cuff) {
+			Cuff cuff = (Cuff) ce.getSource();
+			cuffStatesUndo.add(new CuffState(cuff, cuff.getSaveData()));
+			cuffStatesRedo.clear();
+		}
+	}
+
+	public void undo() {
+		CuffState state = cuffStatesUndo.pollLast();
+		if (state != null) {
+			cuffStatesRedo.add(new CuffState(state.cuff, state.cuff.getSaveData()));
+			state.cuff.load(state.state);
+		}
+	}
+
+	public void redo() {
+		CuffState state = cuffStatesRedo.pollLast();
+		if (state != null) {
+			cuffStatesUndo.add(new CuffState(state.cuff, state.cuff.getSaveData()));
+			state.cuff.load(state.state);
+		}
+	}
+
 	public Element save() {
 		Element root = new Element("CuffSet");
-		for (Component cuff : jPanelInner.getComponents()) {
-			if (cuff instanceof Cuff) {
-				root.appendChild(((Cuff) cuff).getSaveData());
-			}
+		for (Cuff cuff : cuffs) {
+			root.appendChild(((Cuff) cuff).getSaveData());
 		}
 		return root;
 	}
-	
+
 	void load(Element root, Colors colors) {
 		Cuff cuff;
 		Elements elements = root.getChildElements("Cuff");
@@ -48,12 +99,13 @@ public class CuffTab extends javax.swing.JPanel {
 			cuff.load(elements.get(i));
 			add(cuff);
 		}
+		cuffList.setSelectedIndex(0);
 	}
-	
+
 	public void setFilePath(Path path) {
 		filePath = path;
 	}
-	
+
 	public Path getFilePath() {
 		return filePath;
 	}
@@ -69,23 +121,38 @@ public class CuffTab extends javax.swing.JPanel {
 
         jScrollPane = new javax.swing.JScrollPane();
         jPanelInner = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cuffList = new javax.swing.JList();
 
         jPanelInner.setLayout(new net.sleepyduck.WrapLayout());
         jScrollPane.setViewportView(jPanelInner);
+
+        jScrollPane1.setViewportView(cuffList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 754, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(756, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+            .addComponent(jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList cuffList;
     private javax.swing.JPanel jPanelInner;
     private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

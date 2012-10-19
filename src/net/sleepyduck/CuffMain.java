@@ -12,7 +12,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -27,6 +29,7 @@ import nu.xom.Serializer;
 public class CuffMain extends javax.swing.JFrame {
 
 	private JFileChooser fileChooser;
+	private Object CuffTab;
 
 	/**
 	 * Creates new form MuddarFrame
@@ -72,8 +75,13 @@ public class CuffMain extends javax.swing.JFrame {
         jMenuItemOpen = new javax.swing.JMenuItem();
         jMenuItemSave = new javax.swing.JMenuItem();
         jMenuItemSaveAs = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemClose = new javax.swing.JMenuItem();
+        jMenuItemExit = new javax.swing.JMenuItem();
         jMenuEdit = new javax.swing.JMenu();
         jMenuItemCreateCuff = new javax.swing.JMenuItem();
+        jMenuItemUndo = new javax.swing.JMenuItem();
+        jMenuItemRedo = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -119,6 +127,24 @@ public class CuffMain extends javax.swing.JFrame {
             }
         });
         jMenuFile.add(jMenuItemSaveAs);
+        jMenuFile.add(jSeparator1);
+
+        jMenuItemClose.setText("Close");
+        jMenuItemClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCloseActionPerformed(evt);
+            }
+        });
+        jMenuFile.add(jMenuItemClose);
+
+        jMenuItemExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemExit.setText("Exit");
+        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemExitActionPerformed(evt);
+            }
+        });
+        jMenuFile.add(jMenuItemExit);
 
         jMenuBar.add(jMenuFile);
 
@@ -132,6 +158,24 @@ public class CuffMain extends javax.swing.JFrame {
             }
         });
         jMenuEdit.add(jMenuItemCreateCuff);
+
+        jMenuItemUndo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemUndo.setText("Undo");
+        jMenuItemUndo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUndoActionPerformed(evt);
+            }
+        });
+        jMenuEdit.add(jMenuItemUndo);
+
+        jMenuItemRedo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemRedo.setText("Redo");
+        jMenuItemRedo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRedoActionPerformed(evt);
+            }
+        });
+        jMenuEdit.add(jMenuItemRedo);
 
         jMenuBar.add(jMenuEdit);
 
@@ -206,18 +250,65 @@ public class CuffMain extends javax.swing.JFrame {
 		int option = fileChooser.showOpenDialog(this);
 		if (option == JFileChooser.APPROVE_OPTION) {
 			try {
+				File file = fileChooser.getSelectedFile();
+				boolean alreadyOpen = false;
+				CuffTab openTab = null;
+				for (Component cmp : jTabbedPaneCuffs.getComponents()) {
+					if (cmp instanceof CuffTab) {
+						if (file.toPath().equals(((CuffTab) cmp).getFilePath())) {
+							alreadyOpen = true;
+							openTab = (CuffTab) cmp;
+							break;
+						}
+					}
+				}
+				if (alreadyOpen) {
+					int res = JOptionPane.showConfirmDialog(this, "That collection is already open, if you open it again you may loose unsaved data. Do you want to continue?");
+					if (res == JOptionPane.OK_OPTION) {
+						jTabbedPaneCuffs.remove(openTab);
+					} else {
+						return;
+					}
+				}
 				Builder parser = new Builder();
-				FileInputStream fis = new FileInputStream(fileChooser.getSelectedFile());
+				FileInputStream fis = new FileInputStream(file);
 				Document doc = parser.build(fis);
 				Element root = doc.getRootElement();
-				jTabbedPaneCuffs.addTab(fileChooser.getSelectedFile().toPath().getFileName().toString().split("\\.")[0], new CuffTab());
-				jTabbedPaneCuffs.setSelectedIndex(jTabbedPaneCuffs.getComponentCount() - 1);
-				((CuffTab)jTabbedPaneCuffs.getSelectedComponent()).load(root, colors);
+				CuffTab cuffTab = new CuffTab();
+				cuffTab.load(root, colors);
+				cuffTab.setFilePath(file.toPath());
+				jTabbedPaneCuffs.addTab(file.toPath().getFileName().toString().split("\\.")[0], cuffTab);
+				jTabbedPaneCuffs.setSelectedComponent(cuffTab);
 			} catch (ParsingException | IOException ex) {
 				Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		}
     }//GEN-LAST:event_jMenuItemOpenActionPerformed
+
+    private void jMenuItemCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseActionPerformed
+		jTabbedPaneCuffs.remove(jTabbedPaneCuffs.getSelectedComponent());
+		jTabbedPaneCuffs.setSelectedIndex(0);
+    }//GEN-LAST:event_jMenuItemCloseActionPerformed
+
+    private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
+		System.exit(0);
+    }//GEN-LAST:event_jMenuItemExitActionPerformed
+
+    private void jMenuItemUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUndoActionPerformed
+        Component cmp = jTabbedPaneCuffs.getSelectedComponent();
+		if (cmp != null && cmp instanceof CuffTab) {
+			CuffTab cTab = (CuffTab) cmp;
+			cTab.undo();
+		}
+    }//GEN-LAST:event_jMenuItemUndoActionPerformed
+
+    private void jMenuItemRedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRedoActionPerformed
+        Component cmp = jTabbedPaneCuffs.getSelectedComponent();
+		if (cmp != null && cmp instanceof CuffTab) {
+			CuffTab cTab = (CuffTab) cmp;
+			cTab.redo();
+		}
+    }//GEN-LAST:event_jMenuItemRedoActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -261,11 +352,16 @@ public class CuffMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuEdit;
     private javax.swing.JMenu jMenuFile;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemClose;
     private javax.swing.JMenuItem jMenuItemCreateCuff;
     private javax.swing.JMenuItem jMenuItemCreateTab;
+    private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemOpen;
+    private javax.swing.JMenuItem jMenuItemRedo;
     private javax.swing.JMenuItem jMenuItemSave;
     private javax.swing.JMenuItem jMenuItemSaveAs;
+    private javax.swing.JMenuItem jMenuItemUndo;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPaneCuffs;
     // End of variables declaration//GEN-END:variables
 }

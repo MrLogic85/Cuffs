@@ -11,11 +11,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.LinkedList;
+import java.util.Queue;
 import javax.swing.JDialog;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Elements;
-import nu.xom.Node;
 
 /**
  *
@@ -37,6 +39,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 	private Colors colors;
 	private Color[][] yarn;
 	private Color[][] beads;
+	Queue<ChangeListener> changeListeners = new LinkedList<>();
 
 	/**
 	 * Creates new form Mudd
@@ -84,6 +87,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 					int row = (me.getY() - getHeight() + rows * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE) / (UNIT_SQARE + UNIT_GAP);
 					int col = (me.getX() - UNIT_EDGE) / (UNIT_SQARE + UNIT_GAP);
 					if (row < rows && col < worms) {
+						notfiyChangeListeners();
 						setYarnColor(colors.getSelectedColor(), row % repeatRows, col % repeatCols, repeatRows, repeatCols);
 						repaint();
 					}
@@ -93,6 +97,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 					int row = (me.getY() - getHeight() + rows * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE) / (UNIT_SQARE + UNIT_GAP);
 					int col = (me.getX() - UNIT_EDGE - UNIT_SQARE / 2) / (UNIT_SQARE + UNIT_GAP);
 					if (row < rows && col < worms) {
+						notfiyChangeListeners();
 						setBeadColor(colors.getSelectedColor(), row % repeatRows, col % repeatCols, repeatRows, repeatCols);
 						repaint();
 					}
@@ -124,6 +129,16 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 
 	@Override
 	public void mouseExited(MouseEvent me) {
+	}
+
+	void addChangeListener(ChangeListener changeListener) {
+		changeListeners.add(changeListener);
+	}
+
+	private void notfiyChangeListeners() {
+		for (ChangeListener cl : changeListeners) {
+			cl.stateChanged(new ChangeEvent(this));
+		}
 	}
 
 	private void designSizeChanged() {
@@ -291,13 +306,13 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		Elements elements;
 		Element tmp, pos, color;
 		int row, col, red, green, blue;
-		
+
 		name.setText(root.getAttributeValue("name"));
 		worms = Integer.parseInt(root.getAttributeValue("worms"));
 		rows = Integer.parseInt(root.getAttributeValue("rows"));
-		
+
 		yarn = new Color[rows][worms];
-		beads = new Color[rows][worms-1];
+		beads = new Color[rows][worms - 1];
 
 		tmp = root.getFirstChildElement("Yarn");
 		repeatYarnH = Integer.parseInt(tmp.getAttributeValue("repeatH"));
@@ -306,14 +321,14 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		mirrorYarnVCheckbox.setSelected(Boolean.parseBoolean(tmp.getAttributeValue("mirrorV")));
 		elements = tmp.getChildElements("Pos");
 		for (int i = 0; i < elements.size(); ++i) {
-				pos = elements.get(i);
-				row = Integer.parseInt(pos.getAttributeValue("row"));
-				col = Integer.parseInt(pos.getAttributeValue("col"));
-				color = pos.getFirstChildElement("Color");
-				red = Integer.parseInt(color.getAttributeValue("red"));
-				green = Integer.parseInt(color.getAttributeValue("green"));
-				blue = Integer.parseInt(color.getAttributeValue("blue"));
-				yarn[row][col] = new Color(red, green, blue);
+			pos = elements.get(i);
+			row = Integer.parseInt(pos.getAttributeValue("row"));
+			col = Integer.parseInt(pos.getAttributeValue("col"));
+			color = pos.getFirstChildElement("Color");
+			red = Integer.parseInt(color.getAttributeValue("red"));
+			green = Integer.parseInt(color.getAttributeValue("green"));
+			blue = Integer.parseInt(color.getAttributeValue("blue"));
+			yarn[row][col] = new Color(red, green, blue);
 		}
 
 		tmp = root.getFirstChildElement("Beads");
@@ -323,16 +338,21 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		mirrorBeadsVCheckbox.setSelected(Boolean.parseBoolean(tmp.getAttributeValue("mirrorV")));
 		elements = tmp.getChildElements("Pos");
 		for (int i = 0; i < elements.size(); ++i) {
-				pos = elements.get(i);
-				row = Integer.parseInt(pos.getAttributeValue("row"));
-				col = Integer.parseInt(pos.getAttributeValue("col"));
-				color = pos.getFirstChildElement("Color");
-				red = Integer.parseInt(color.getAttributeValue("red"));
-				green = Integer.parseInt(color.getAttributeValue("green"));
-				blue = Integer.parseInt(color.getAttributeValue("blue"));
-				beads[row][col] = new Color(red, green, blue);
+			pos = elements.get(i);
+			row = Integer.parseInt(pos.getAttributeValue("row"));
+			col = Integer.parseInt(pos.getAttributeValue("col"));
+			color = pos.getFirstChildElement("Color");
+			red = Integer.parseInt(color.getAttributeValue("red"));
+			green = Integer.parseInt(color.getAttributeValue("green"));
+			blue = Integer.parseInt(color.getAttributeValue("blue"));
+			beads[row][col] = new Color(red, green, blue);
 		}
 		designSizeChanged();
+	}
+
+	@Override
+	public String toString() {
+		return name.getText();
 	}
 
 	/**
@@ -362,8 +382,8 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 
         name.setText("Name");
         name.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                nameKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nameKeyReleased(evt);
             }
         });
         add(name);
@@ -462,6 +482,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		JDialog dlg = sop.createSliderDialog(this, "Width", 15, 70, worms);
 		dlg.setVisible(true);
 		if (sop.getValue() == SliderOptionPane.OK_OPTION && sop.getInputValue() instanceof Integer) {
+			notfiyChangeListeners();
 			worms = (Integer) sop.getInputValue();
 		}
 		designSizeChanged();
@@ -471,6 +492,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		JDialog dlg = sop.createSliderDialog(this, "Height", 15, 70, rows);
 		dlg.setVisible(true);
 		if (sop.getValue() == SliderOptionPane.OK_OPTION && sop.getInputValue() instanceof Integer) {
+			notfiyChangeListeners();
 			rows = (Integer) sop.getInputValue();
 		}
 		designSizeChanged();
@@ -480,6 +502,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		JDialog dlg = sop.createSliderDialog(this, "Repeat H", 0, 70, repeatYarnH);
 		dlg.setVisible(true);
 		if (sop.getValue() == SliderOptionPane.OK_OPTION && sop.getInputValue() instanceof Integer) {
+			notfiyChangeListeners();
 			repeatYarnH = (Integer) sop.getInputValue();
 		}
 		designRepeatChanged();
@@ -489,19 +512,11 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		JDialog dlg = sop.createSliderDialog(this, "Repeat V", 0, 70, repeatYarnV);
 		dlg.setVisible(true);
 		if (sop.getValue() == SliderOptionPane.OK_OPTION && sop.getInputValue() instanceof Integer) {
+			notfiyChangeListeners();
 			repeatYarnV = (Integer) sop.getInputValue();
 		}
 		designRepeatChanged();
     }//GEN-LAST:event_repeatYarnVButtonMouseClicked
-
-    private void nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyTyped
-		if (Character.isAlphabetic(evt.getKeyChar()) || Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == ' ') {
-			updateLayout();
-			revalidate();
-		} else {
-			evt.consume();
-		}
-    }//GEN-LAST:event_nameKeyTyped
 
     private void mirrorYarnHCheckboxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mirrorYarnHCheckboxMouseClicked
 		designRepeatChanged();
@@ -515,6 +530,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		JDialog dlg = sop.createSliderDialog(this, "Repeat H", 0, 70, repeatBeadsH);
 		dlg.setVisible(true);
 		if (sop.getValue() == SliderOptionPane.OK_OPTION && sop.getInputValue() instanceof Integer) {
+			notfiyChangeListeners();
 			repeatBeadsH = (Integer) sop.getInputValue();
 		}
 		designRepeatChanged();
@@ -524,6 +540,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		JDialog dlg = sop.createSliderDialog(this, "Repeat V", 0, 70, repeatBeadsV);
 		dlg.setVisible(true);
 		if (sop.getValue() == SliderOptionPane.OK_OPTION && sop.getInputValue() instanceof Integer) {
+			notfiyChangeListeners();
 			repeatBeadsV = (Integer) sop.getInputValue();
 		}
 		designRepeatChanged();
@@ -553,6 +570,16 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		BeadsCheckForm checkForm = new BeadsCheckForm(list);
 		checkForm.setVisible(true);
     }//GEN-LAST:event_getBeadPatternButtonMouseClicked
+
+    private void nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyReleased
+		if (Character.isAlphabetic(evt.getKeyChar()) || Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == ' ') {
+			notfiyChangeListeners();
+			updateLayout();
+		} else {
+			evt.consume();
+		}
+		revalidate();
+    }//GEN-LAST:event_nameKeyReleased
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton getBeadPatternButton;
     private javax.swing.JButton heightButton;
