@@ -60,10 +60,16 @@ public class CuffTab extends javax.swing.JPanel implements ListSelectionListener
 
 	@Override
 	public void stateChanged(ChangeEvent ce) {
-		if (ce.getSource() instanceof Cuff) {
-			Cuff cuff = (Cuff) ce.getSource();
-			cuffStatesUndo.add(new CuffState(cuff, cuff.getSaveData()));
-			cuffStatesRedo.clear();
+		if (ce instanceof DataChangeEvent) {
+			if (ce.getSource() instanceof Cuff) {
+				Cuff cuff = (Cuff) ce.getSource();
+				Element newData = (Element) ((DataChangeEvent) ce).getData();
+				if (cuffStatesUndo.peekLast() != null && cuffStatesUndo.peekLast().state.toXML().compareTo(newData.toXML()) == 0) {
+					return;
+				}
+				cuffStatesUndo.add(new CuffState(cuff, newData));
+				cuffStatesRedo.clear();
+			}
 		}
 	}
 

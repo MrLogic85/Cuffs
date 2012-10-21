@@ -3,74 +3,114 @@
     <Cuff name="1" worms="54" rows="60">
         <Yarn repeatH="1" repeatV="2" mirrorH="false" mirrorV="false">
             <Pos row="0" col="0">
-                <Color red="0" green="0" blue="102"/>
+                <CuffColor name="Marinblå" id="adacc0ea-549f-4953-a397-3a54feef4d5d">
+                    <Color red="0" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="0">
-                <Color red="0" green="0" blue="255"/>
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
             </Pos>
         </Yarn>
         <Beads repeatH="0" repeatV="4" mirrorH="false"
         mirrorV="false">
             <Pos row="1" col="5">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="7">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="9">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="1">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="3">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="7">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="11">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="13">
-                <Color red="204" green="0" blue="0"/>
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
             </Pos>
         </Beads>
     </Cuff>
     <Cuff name="2" worms="56" rows="60">
         <Yarn repeatH="1" repeatV="2" mirrorH="false" mirrorV="false">
             <Pos row="0" col="0">
-                <Color red="204" green="0" blue="102"/>
+                <CuffColor name="Mörk gammelrosa" id="3213699e-8a69-45d9-ae04-d26105fddd37">
+                    <Color red="204" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="0">
-                <Color red="255" green="102" blue="102"/>
+                <CuffColor name="Ljus gammelrosa" id="9462b40b-40e4-4cc0-b98a-e3b97ce94b1b">
+                    <Color red="255" green="102" blue="102"/>
+                </CuffColor>
             </Pos>
         </Yarn>
         <Beads repeatH="0" repeatV="4" mirrorH="false"
         mirrorV="false">
             <Pos row="1" col="5">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="7">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="13">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="1" col="15">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="1">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="3">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="9">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
             <Pos row="3" col="11">
-                <Color red="102" green="0" blue="102"/>
+                <CuffColor name="2 Blålila olja" id="76a7829b-b7a2-4b2b-b472-5b2f9c780d2e">
+                    <Color red="102" green="0" blue="102"/>
+                </CuffColor>
             </Pos>
         </Beads>
     </Cuff>

@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="label" pref="83" max="32767" attributes="0"/>
+              <Component id="label" pref="179" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="colorPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>

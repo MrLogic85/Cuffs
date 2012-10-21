@@ -29,6 +29,14 @@
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameKeyReleased"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JCheckBox" name="editCheckBox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edit Mode"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="editCheckBoxMouseClicked"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JButton" name="widthButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Width (20)"/>
@@ -61,22 +69,6 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="repeatYarnVButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="mirrorYarnHCheckbox">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mirror Yarn H"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorYarnHCheckboxMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="mirrorYarnVCheckbox">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mirror Yarn V"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorYarnVCheckboxMouseClicked"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="repeatBeadsHButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Repeat Beads H (5)"/>
@@ -92,22 +84,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="repeatBeadsVButtonMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="mirrorBeadsHCheckbox">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mirror Beads H"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorBeadsHCheckboxMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="mirrorBeadsVCheckbox">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mirror Beads V"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mirrorBeadsVCheckboxMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="getBeadPatternButton">
@@ -163,7 +139,23 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="4_widthButton">
+        <CodeExpression id="4_editCheckBox">
+          <CodeVariable name="editCheckBox" type="8194" declaredType="javax.swing.JCheckBox"/>
+          <ExpressionOrigin>
+            <ExpressionProvider type="ComponentRef">
+              <ComponentRef name="editCheckBox"/>
+            </ExpressionProvider>
+          </ExpressionOrigin>
+        </CodeExpression>
+      </Parameters>
+    </CodeStatement>
+    <CodeStatement>
+      <CodeExpression id="1"/>
+      <StatementProvider type="CodeMethod">
+        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+      </StatementProvider>
+      <Parameters>
+        <CodeExpression id="5_widthButton">
           <CodeVariable name="widthButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">
@@ -179,7 +171,7 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="5_heightButton">
+        <CodeExpression id="6_heightButton">
           <CodeVariable name="heightButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">
@@ -195,7 +187,7 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="6_repeatYarnHButton">
+        <CodeExpression id="7_repeatYarnHButton">
           <CodeVariable name="repeatYarnHButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">
@@ -211,7 +203,7 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="7_repeatYarnVButton">
+        <CodeExpression id="8_repeatYarnVButton">
           <CodeVariable name="repeatYarnVButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">
@@ -227,39 +219,7 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="8_mirrorYarnHCheckbox">
-          <CodeVariable name="mirrorYarnHCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
-          <ExpressionOrigin>
-            <ExpressionProvider type="ComponentRef">
-              <ComponentRef name="mirrorYarnHCheckbox"/>
-            </ExpressionProvider>
-          </ExpressionOrigin>
-        </CodeExpression>
-      </Parameters>
-    </CodeStatement>
-    <CodeStatement>
-      <CodeExpression id="1"/>
-      <StatementProvider type="CodeMethod">
-        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
-      </StatementProvider>
-      <Parameters>
-        <CodeExpression id="9_mirrorYarnVCheckbox">
-          <CodeVariable name="mirrorYarnVCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
-          <ExpressionOrigin>
-            <ExpressionProvider type="ComponentRef">
-              <ComponentRef name="mirrorYarnVCheckbox"/>
-            </ExpressionProvider>
-          </ExpressionOrigin>
-        </CodeExpression>
-      </Parameters>
-    </CodeStatement>
-    <CodeStatement>
-      <CodeExpression id="1"/>
-      <StatementProvider type="CodeMethod">
-        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
-      </StatementProvider>
-      <Parameters>
-        <CodeExpression id="10_repeatBeadsHButton">
+        <CodeExpression id="9_repeatBeadsHButton">
           <CodeVariable name="repeatBeadsHButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">
@@ -275,7 +235,7 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="11_repeatBeadsVButton">
+        <CodeExpression id="10_repeatBeadsVButton">
           <CodeVariable name="repeatBeadsVButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">
@@ -291,39 +251,7 @@
         <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
       </StatementProvider>
       <Parameters>
-        <CodeExpression id="12_mirrorBeadsHCheckbox">
-          <CodeVariable name="mirrorBeadsHCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
-          <ExpressionOrigin>
-            <ExpressionProvider type="ComponentRef">
-              <ComponentRef name="mirrorBeadsHCheckbox"/>
-            </ExpressionProvider>
-          </ExpressionOrigin>
-        </CodeExpression>
-      </Parameters>
-    </CodeStatement>
-    <CodeStatement>
-      <CodeExpression id="1"/>
-      <StatementProvider type="CodeMethod">
-        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
-      </StatementProvider>
-      <Parameters>
-        <CodeExpression id="13_mirrorBeadsVCheckbox">
-          <CodeVariable name="mirrorBeadsVCheckbox" type="8194" declaredType="javax.swing.JCheckBox"/>
-          <ExpressionOrigin>
-            <ExpressionProvider type="ComponentRef">
-              <ComponentRef name="mirrorBeadsVCheckbox"/>
-            </ExpressionProvider>
-          </ExpressionOrigin>
-        </CodeExpression>
-      </Parameters>
-    </CodeStatement>
-    <CodeStatement>
-      <CodeExpression id="1"/>
-      <StatementProvider type="CodeMethod">
-        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
-      </StatementProvider>
-      <Parameters>
-        <CodeExpression id="14_getBeadPatternButton">
+        <CodeExpression id="11_getBeadPatternButton">
           <CodeVariable name="getBeadPatternButton" type="8194" declaredType="javax.swing.JButton"/>
           <ExpressionOrigin>
             <ExpressionProvider type="ComponentRef">

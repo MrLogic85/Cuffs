@@ -7,44 +7,67 @@ package net.sleepyduck;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.util.UUID;
 import javax.swing.plaf.BorderUIResource;
+import nu.xom.Attribute;
+import nu.xom.Element;
 
 /**
  *
  * @author MetcalfPriv
  */
-public class CuffColor extends javax.swing.JPanel {
+public class CuffColor extends javax.swing.JPanel implements Comparable<Object> {
 
-	private boolean _isBeadSelected;
-	private boolean _isYarnSelected;
+	private boolean _isSelected;
 	private int _borderThickness = 2;
 	private int _defaultSize = 8;
+	private UUID _id;
 
 	public CuffColor() {
-		setIsYarnSelected(false);
-		setIsBeadSelected(false);
-		setColor(Color.WHITE);
+		_isSelected = false;
+		setBackground(Color.WHITE);
+		setBorder(new BorderUIResource.LineBorderUIResource(Color.WHITE, _borderThickness));
+		_id = UUID.randomUUID();
 	}
 
-	public void setIsBeadSelected(boolean b) {
-		_isBeadSelected = b;
-		repaint();
-	}
-
-	public void setIsYarnSelected(boolean b) {
-		_isYarnSelected = b;
-		setBorder(new BorderUIResource.LineBorderUIResource(b ? Color.BLACK : getBackground(), _borderThickness));
-	}
-
-	@Override
-	public void paint(Graphics graphics) {
-		super.paint(graphics);
-		if (_isBeadSelected) {
-			graphics.setColor(Color.BLACK);
-			graphics.drawOval(getWidth() / 2 - 4, getHeight() / 2 - 4, 7, 7);
+	CuffColor(Element cuffEle) {
+		_isSelected = false;
+		String id = cuffEle.getAttributeValue("id");
+		if (id != null) {
+			_id = UUID.fromString(id);
+		} else {
+			_id = UUID.randomUUID();
 		}
+		Element color = cuffEle.getFirstChildElement("Color");
+		int r = Integer.parseInt(color.getAttributeValue("red"));
+		int g = Integer.parseInt(color.getAttributeValue("green"));
+		int b = Integer.parseInt(color.getAttributeValue("blue"));
+		setBackground(new Color(r, g, b));
+		setBorder(new BorderUIResource.LineBorderUIResource(new Color(r, g, b), _borderThickness));
+		setToolTipText(cuffEle.getAttributeValue("name"));
 	}
-	
+
+	public Element getSaveData() {
+		Element cuffEle = new Element("CuffColor");
+		cuffEle.addAttribute(new Attribute("name", toString()));
+		cuffEle.addAttribute(new Attribute("id", getId().toString()));
+		Element color = new Element("Color");
+		color.addAttribute(new Attribute("red", "" + getColor().getRed()));
+		color.addAttribute(new Attribute("green", "" + getColor().getGreen()));
+		color.addAttribute(new Attribute("blue", "" + getColor().getBlue()));
+		cuffEle.appendChild(color);
+		return cuffEle;
+	}
+
+	public void setIsSelected(boolean b) {
+		_isSelected = b;
+		setBorder(new BorderUIResource.LineBorderUIResource((b ? Color.BLACK : getColor()), _borderThickness));
+	}
+
+	public UUID getId() {
+		return _id;
+	}
+
 	@Override
 	public Dimension getSize() {
 		return getPreferredSize();
@@ -52,19 +75,44 @@ public class CuffColor extends javax.swing.JPanel {
 
 	@Override
 	public Dimension getPreferredSize() {
-		return new Dimension(_defaultSize + _borderThickness*2, _defaultSize + _borderThickness*2);
+		return new Dimension(_defaultSize + _borderThickness * 2, _defaultSize + _borderThickness * 2);
 	}
 
 	public void setColor(Color color) {
 		setBackground(color);
-		setBorder(new BorderUIResource.LineBorderUIResource(_isYarnSelected ? Color.BLACK : color, _borderThickness));
+		setBorder(new BorderUIResource.LineBorderUIResource(_isSelected ? Color.BLACK : color, _borderThickness));
 	}
 
 	@Override
 	public String toString() {
 		return getToolTipText();
 	}
-	
+
+	@Override
+	public int compareTo(Object t) {
+		if (t instanceof CuffColor) {
+			if (_id.compareTo(((CuffColor) t)._id) == 0) {
+				return 0;
+			} else {
+				return -1;
+			}
+		} else if (t instanceof Color) {
+			if (getColor().getRed() == ((Color) t).getRed()
+					&& getColor().getGreen() == ((Color) t).getGreen()
+					&& getColor().getBlue() == ((Color) t).getBlue()) {
+				return 0;
+			} else {
+				return -1;
+			}
+		} else {
+			return -1;
+		}
+	}
+
+	Color getColor() {
+		return getBackground();
+	}
+
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always

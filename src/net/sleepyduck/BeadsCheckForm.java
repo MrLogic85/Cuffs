@@ -63,7 +63,7 @@ public class BeadsCheckForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                .addComponent(label, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(colorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -85,7 +85,7 @@ public class BeadsCheckForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkButtonMouseClicked
-        if (list.isEmpty()) {
+		if (list.isEmpty()) {
 			dispose();
 		} else {
 			showNext();
@@ -101,8 +101,8 @@ public class BeadsCheckForm extends javax.swing.JFrame {
 	private void showNext() {
 		BeadCount bc = list.poll();
 		if (bc != null) {
-			label.setText(bc.count + " st" + (bc.name != null && bc.name.length() > 0 ? " " + bc.name : ""));
-			colorPanel.setBackground(bc.color);
+			label.setText(bc.count + " st" + (bc.color.toString() != null && bc.color.toString().length() > 0 ? " " + bc.color.toString() : ""));
+			colorPanel.setBackground(bc.color.getColor());
 			checkButton.setText(list.isEmpty() ? "Close" : "Check");
 		}
 	}

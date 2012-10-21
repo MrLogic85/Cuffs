@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JColorChooser;
@@ -40,9 +41,19 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 	private JColorChooser colorChooser;
 	private final JDialog dlg;
 	private boolean colorsLoaded = false;
-	private static final int RED = 0;
-	private static final int GREEN = 1;
-	private static final int BLUE = 2;
+	private static final int GREY = 0;
+	private static final int WHITERED = 1;
+	private static final int REDBLACK = 2;
+	private static final int WHITEGREEN = 3;
+	private static final int GREENBLACK = 4;
+	private static final int WHITEBLUE = 5;
+	private static final int BLUEBLACK = 6;
+	private static final int WHITEYELLOW = 7;
+	private static final int YELLOWBLACK = 8;
+	private static final int WHITEPURPLE = 9;
+	private static final int PURPLEBLACK = 10;
+	private static final int WHITETURQUOISE = 11;
+	private static final int TURQUOISEBLACK = 12;
 
 	/**
 	 * Creates new form Colors
@@ -57,6 +68,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
 				colorToChange.setColor(colorChooser.getColor());
+				getTopLevelAncestor().repaint();
 				save();
 			}
 		}, null);
@@ -64,14 +76,29 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		try {
 			addEraseColor();
 			load();
+			/*for (int i = 0; i < 600; ++i) {
+				CuffColor cuff = new CuffColor();
+				Color color = new Color((int) (256 * Math.random()), (int) (256 * Math.random()), (int) (256 * Math.random()));
+				cuff.setToolTipText(color.toString());
+				cuff.setColor(color);
+				addNewColor(cuff, cuff.toString());
+			}
+			for (int i = 0; i < 6; ++i) {
+				CuffColor cuff = new CuffColor();
+				Color color = new Color(i * 51, i * 51, i * 51);
+				cuff.setToolTipText(color.toString());
+				cuff.setColor(color);
+				addNewColor(cuff, cuff.toString());
+			}*/
+
 		} catch (IOException ex) {
 			Logger.getLogger(Colors.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
-	public Color getSelectedColor() {
+	public CuffColor getSelectedColor() {
 		if (lastColor != null && !(lastColor instanceof EraseColor)) {
-			return lastColor.getBackground();
+			return lastColor;
 		}
 		return null;
 	}
@@ -165,6 +192,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		}
 		revalidate();
 		repaint();
+		save();
 	}
 
 	@Override
@@ -191,10 +219,10 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				}
 			} else if (me.getButton() == MouseEvent.BUTTON1) {
 				if (lastColor != null) {
-					lastColor.setIsYarnSelected(false);
+					lastColor.setIsSelected(false);
 				}
 				lastColor = (CuffColor) me.getComponent();
-				lastColor.setIsYarnSelected(true);
+				lastColor.setIsSelected(true);
 			}
 		}
 	}
@@ -221,11 +249,33 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 			if (comp instanceof CuffColor) {
 				mudd = (CuffColor) comp;
 				if (mudd.toString() != null && mudd.toString().length() > 0) {
-					if (mudd.getBackground() != null) {
-						if (mudd.getBackground().equals(color)) {
+					if (mudd.getColor() != null) {
+						if (mudd.getColor().equals(color)) {
 							return mudd.toString();
 						}
 					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public CuffColor findColor(Color color) {
+		for (Component cmp : colorPanel.getComponents()) {
+			if (cmp instanceof CuffColor && !(cmp instanceof EraseColor)) {
+				if (((CuffColor) cmp).compareTo(color) == 0) {
+					return (CuffColor) cmp;
+				}
+			}
+		}
+		return null;
+	}
+
+	public CuffColor findColor(UUID id) {
+		for (Component cmp : colorPanel.getComponents()) {
+			if (cmp instanceof CuffColor && !(cmp instanceof EraseColor)) {
+				if (((CuffColor) cmp).getId().compareTo(id) == 0) {
+					return (CuffColor) cmp;
 				}
 			}
 		}
@@ -241,15 +291,14 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        colorPanel = new javax.swing.JPanel();
         addColorButton = new javax.swing.JButton();
         removeColorButton = new javax.swing.JButton();
         jButtonOrderName = new javax.swing.JButton();
         jButtonOrderColor = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        colorPanel = new javax.swing.JPanel();
 
         setMinimumSize(new java.awt.Dimension(200, 200));
-
-        colorPanel.setLayout(new net.sleepyduck.WrapLayout());
 
         addColorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Plus.png"))); // NOI18N
         addColorButton.setToolTipText("Add new color");
@@ -287,35 +336,35 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
             }
         });
 
+        colorPanel.setLayout(new net.sleepyduck.WrapLayout());
+        jScrollPane1.setViewportView(colorPanel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(colorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonOrderName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonOrderColor)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jButtonOrderName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonOrderColor))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addComponent(colorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonOrderName)
-                    .addComponent(jButtonOrderColor)))
+                    .addComponent(jButtonOrderColor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -351,34 +400,151 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				} else if (t2 instanceof EraseColor) {
 					return 1;
 				} else {
-					final int[] colort1 = new int[]{t1.getBackground().getRed(), t1.getBackground().getGreen(), t1.getBackground().getBlue()};
-					final int[] colort2 = new int[]{t2.getBackground().getRed(), t2.getBackground().getGreen(), t2.getBackground().getBlue()};
-					int dominantT1 = getBiggest(colort1);
-					int dominantT2 = getBiggest(colort2);
-					if (dominantT1 != dominantT2) {
-						return dominantT1 - dominantT2;
+					final int[] color1 = new int[]{t1.getBackground().getRed(), t1.getBackground().getGreen(), t1.getBackground().getBlue()};
+					final int[] color2 = new int[]{t2.getBackground().getRed(), t2.getBackground().getGreen(), t2.getBackground().getBlue()};
+					final int[] weight1 = getMaxColorAndWeight(color1);
+					final int[] weight2 = getMaxColorAndWeight(color2);
+					if (weight1[0] == weight2[0]) {
+						return weight1[1] - weight2[1];
 					} else {
-						if (dominantT1 == RED) {
-							return (colort2[RED] - colort1[RED]) * 3 + (colort2[BLUE] - colort1[BLUE]) * 2 + (colort2[GREEN] - colort1[GREEN]);
-						} else if (dominantT1 == BLUE) {
-							return (colort2[RED] - colort1[RED]) + (colort2[BLUE] - colort1[BLUE]) * 3 + (colort2[GREEN] - colort1[GREEN] * 2);
-						} else {
-							return (colort2[RED] - colort1[RED]) * 2 + (colort2[BLUE] - colort1[BLUE]) + (colort2[GREEN] - colort1[GREEN] * 3);
-						}
+						return weight1[0] - weight2[0];
 					}
+					/*int[] dominantT1 = getBiggest(colort1);
+					 int[] dominantT2 = getBiggest(colort2);
+					 if (dominantT1[0] != dominantT2[0]) {
+					 return dominantT1[0] - dominantT2[0];
+					 } else if (dominantT1[1] != dominantT2[1]) {
+					 return dominantT1[1] - dominantT2[1];
+					 } else {
+					 return t2.getBackground().getRGB() - t1.getBackground().getRGB();
+					 //return (colort2[dominantT1[0]] - colort1[dominantT1[0]]) + (colort2[dominantT1[1]] - colort1[dominantT1[1]]) + (colort2[dominantT1[2]] - colort1[dominantT1[2]]);
+					 //return colort2[dominantT2[2]] - colort1[dominantT1[2]];
+					 //return (colort2[dominantT2[1]] - colort2[dominantT2[2]]) - (colort1[dominantT1[1]] - colort1[dominantT1[2]]);
+					 //return (colort2[dominantT1[0]] - colort1[dominantT1[0]]) / 26 * 100 + (colort2[dominantT1[1]] - colort1[dominantT1[1]]) / 26 * 10 + (colort2[dominantT1[2]] - colort1[dominantT1[2]]) / 26;
+					 }*/
 				}
 			}
 
-			private int getBiggest(int[] colors) {
-				int[] colorsSorted = Arrays.copyOf(colors, colors.length);
+			private int[] getBiggest(int[] numbers) {
+				int length = numbers.length;
+				int[] colorsSorted = Arrays.copyOf(numbers, length);
+				int[] ret = new int[length];
+				Arrays.fill(ret, -1);
 				Arrays.sort(colorsSorted);
-				int maxVal = colorsSorted[colorsSorted.length - 1];
-				for (int i = 0; i < colors.length; ++i) {
-					if (colors[i] == maxVal) {
-						return i;
+				for (int colId = 0; colId < length; ++colId) {
+					int maxVal = colorsSorted[length - 1 - colId];
+					for (int i = 0; i < length; ++i) {
+						if (numbers[i] == maxVal && !contains(ret, i)) {
+							ret[colId] = i;
+							break;
+						}
 					}
 				}
-				return 0;
+				return ret;
+			}
+
+			private boolean contains(int[] numbers, int number) {
+				for (int i = 0; i < numbers.length; ++i) {
+					if (numbers[i] == number) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			private int[] getMaxColorAndWeight(int[] color) {
+				int[][] weights = new int[2][13];
+				int[] weight;
+				weight = getGreyscaleWeights(color);
+				weights[0][GREY] = weight[0];
+				weights[1][GREY] = weight[1];
+				weight = getComboColorWeightHigh(color[0], color[1], color[2]);
+				weights[0][WHITERED] = weight[0];
+				weights[1][WHITERED] = weight[1];
+				weight = getColorWeightHigh(color[0], color[1], color[2]);
+				weights[0][REDBLACK] = weight[0];
+				weights[1][REDBLACK] = weight[1];
+				weight = getComboColorWeightHigh(color[1], color[0], color[2]);
+				weights[0][WHITEGREEN] = weight[0];
+				weights[1][WHITEGREEN] = weight[1];
+				weight = getColorWeightHigh(color[1], color[0], color[2]);
+				weights[0][GREENBLACK] = weight[0];
+				weights[1][GREENBLACK] = weight[1];
+				weight = getComboColorWeightHigh(color[2], color[0], color[1]);
+				weights[0][WHITEBLUE] = weight[0];
+				weights[1][WHITEBLUE] = weight[1];
+				weight = getColorWeightHigh(color[2], color[0], color[1]);
+				weights[0][BLUEBLACK] = weight[0];
+				weights[1][BLUEBLACK] = weight[1];
+				weight = getColorWeightLow(color[2], color[0], color[1]);
+				weights[0][WHITEYELLOW] = weight[0];
+				weights[1][WHITEYELLOW] = weight[1];
+				weight = getComboColorWeightLow(color[2], color[0], color[1]);
+				weights[0][YELLOWBLACK] = weight[0];
+				weights[1][YELLOWBLACK] = weight[1];
+				weight = getColorWeightLow(color[0], color[2], color[1]);
+				weights[0][WHITEPURPLE] = weight[0];
+				weights[1][WHITEPURPLE] = weight[1];
+				weight = getComboColorWeightLow(color[0], color[2], color[1]);
+				weights[0][PURPLEBLACK] = weight[0];
+				weights[1][PURPLEBLACK] = weight[1];
+				weight = getColorWeightLow(color[1], color[2], color[0]);
+				weights[0][WHITETURQUOISE] = weight[0];
+				weights[1][WHITETURQUOISE] = weight[1];
+				weight = getComboColorWeightLow(color[1], color[2], color[0]);
+				weights[0][TURQUOISEBLACK] = weight[0];
+				weights[1][TURQUOISEBLACK] = weight[1];
+
+				// REMOVE SOME COLORS IF PALETTE IS SMALL
+				if (colorPanel.getComponents().length < 30) {
+					weights[0][WHITEYELLOW] = Integer.MAX_VALUE;
+					weights[0][YELLOWBLACK] = Integer.MAX_VALUE;
+					weights[0][WHITEPURPLE] = Integer.MAX_VALUE;
+					weights[0][PURPLEBLACK] = Integer.MAX_VALUE;
+					weights[0][WHITETURQUOISE] = Integer.MAX_VALUE;
+					weights[0][TURQUOISEBLACK] = Integer.MAX_VALUE;
+				}
+
+				int maxColor = getBiggest(weights[0])[12];
+				return new int[]{maxColor, weights[1][maxColor]};
+			}
+
+			/*private int getColorWeight(int[] color, int r, int g, int b) {
+			 return Math.abs(color[0] - 255 * r) + Math.abs(color[1] - 255 * g) + Math.abs(color[2] - 255 * b);
+			 }*/
+			private int[] getGreyscaleWeights(int[] color) {
+				int[] weights = new int[2];
+				weights[0] = (Math.abs(color[0] - color[1]) + Math.abs(color[1] - color[2]) + Math.abs(color[2] - color[0])) * 3;
+				weights[1] = -color[0] - color[1] - color[2];
+				return weights;
+			}
+
+			private int[] getColorWeightHigh(int any, int low1, int low2) {
+				int[] weights = new int[2];
+				weights[0] = 1 + (low1 + low2); //1 Because 0 0 0 should yield geyscale
+				weights[1] = low1 + low2 - any;
+				return weights;
+			}
+
+			private int[] getColorWeightLow(int any, int high1, int high2) {
+				int[] weights = new int[2];
+				weights[0] = 1 + (255 - high1 + 255 - high2); //1 Because 0 0 0 should yield geyscale
+				weights[1] = 255 - high1 + 255 - high2 - any;
+				return weights;
+			}
+
+			private int[] getComboColorWeightHigh(int high, int any1, int any2) {
+				int[] weights = new int[2];
+				weights[0] = 1 + Math.abs(any1 - any2) + (255 - high);
+				weights[1] = 255 - any1 + 255 - any2 - high;
+				return weights;
+			}
+
+			private int[] getComboColorWeightLow(int low, int any1, int any2) {
+				int[] weights = new int[2];
+				weights[0] = 1 + Math.abs(any1 - any2) + low;
+				weights[1] = 255 - any1 + 255 - any2 - low;
+				return weights;
 			}
 		});
     }//GEN-LAST:event_jButtonOrderColorMouseClicked
@@ -387,6 +553,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
     private javax.swing.JPanel colorPanel;
     private javax.swing.JButton jButtonOrderColor;
     private javax.swing.JButton jButtonOrderName;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton removeColorButton;
     // End of variables declaration//GEN-END:variables
 
@@ -400,13 +567,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				cmp = colorPanel.getComponent(i);
 				if (cmp instanceof CuffColor && !(cmp instanceof EraseColor)) {
 					cuff = (CuffColor) cmp;
-					cuffEle = new Element("CuffColor");
-					cuffEle.addAttribute(new Attribute("name", cuff.toString()));
-					color = new Element("Color");
-					color.addAttribute(new Attribute("red", "" + cuff.getBackground().getRed()));
-					color.addAttribute(new Attribute("green", "" + cuff.getBackground().getGreen()));
-					color.addAttribute(new Attribute("blue", "" + cuff.getBackground().getBlue()));
-					cuffEle.appendChild(color);
+					cuffEle = cuff.getSaveData();
 					root.appendChild(cuffEle);
 				}
 			}
@@ -439,18 +600,22 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				Elements elements = root.getChildElements("CuffColor");
 				for (int i = 0; i < elements.size(); ++i) {
 					cuffEle = elements.get(i);
-					cuff = new CuffColor();
-					color = cuffEle.getFirstChildElement("Color");
-					r = Integer.parseInt(color.getAttributeValue("red"));
-					g = Integer.parseInt(color.getAttributeValue("green"));
-					b = Integer.parseInt(color.getAttributeValue("blue"));
-					cuff.setColor(new Color(r, g, b));
-					addNewColor(cuff, cuffEle.getAttributeValue("name"));
+					cuff = new CuffColor(cuffEle);
+					addNewColor(cuff, cuff.toString());
 				}
 			}
 			colorsLoaded = true;
 		} catch (ParsingException | IOException ex) {
 			Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+
+	CuffColor tryReplace(CuffColor cuffColor) {
+		CuffColor foundColor = findColor(cuffColor.getId());
+		if (foundColor != null) {
+			return foundColor;
+		} else {
+			return cuffColor;
 		}
 	}
 }

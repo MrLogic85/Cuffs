@@ -12,13 +12,11 @@ import java.awt.Color;
  */
 public class BeadCount {
 
-	public Color color;
-	public String name;
+	public CuffColor color;
 	public int count;
 
-	public BeadCount(Color color, String name) {
+	public BeadCount(CuffColor color) {
 		this.color = color;
-		this.name = name;
 		this.count = 1;
 	}
 }
