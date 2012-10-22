@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -248,6 +247,10 @@ public class CuffMain extends javax.swing.JFrame {
 		Component cmp = jTabbedPaneCuffs.getSelectedComponent();
 		if (cmp != null && cmp instanceof CuffTab) {
 			CuffTab cuffTab = (CuffTab) cmp;
+			try {
+				fileChooser.setCurrentDirectory(new File(PreferencesData.LAST_SAVE_LOCATION));
+			} catch (Exception e) {
+			}
 			int option = fileChooser.showSaveDialog(this);
 			if (option == JFileChooser.APPROVE_OPTION) {
 				File theFileToSave = fileChooser.getSelectedFile();
@@ -264,6 +267,10 @@ public class CuffMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemSaveAsActionPerformed
 
     private void jMenuItemOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemOpenActionPerformed
+		try {
+			fileChooser.setCurrentDirectory(new File(PreferencesData.LAST_SAVE_LOCATION));
+		} catch (Exception e) {
+		}
 		int option = fileChooser.showOpenDialog(this);
 		if (option == JFileChooser.APPROVE_OPTION) {
 			try {
@@ -296,6 +303,10 @@ public class CuffMain extends javax.swing.JFrame {
 				cuffTab.setFilePath(file.toPath());
 				jTabbedPaneCuffs.addTab(file.toPath().getFileName().toString().split("\\.")[0], cuffTab);
 				jTabbedPaneCuffs.setSelectedComponent(cuffTab);
+				String path = file.toPath().toString();
+				path = path.substring(0, path.lastIndexOf('\\'));
+				PreferencesData.LAST_SAVE_LOCATION = path;
+				PreferencesData.save();
 			} catch (ParsingException | IOException ex) {
 				Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
 			}
@@ -347,13 +358,7 @@ public class CuffMain extends javax.swing.JFrame {
 					break;
 				}
 			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(CuffMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(CuffMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(CuffMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(CuffMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		//</editor-fold>

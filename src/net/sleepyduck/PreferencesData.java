@@ -38,6 +38,7 @@ public class PreferencesData {
 	public static final int CUFF_EDGE_DEFAULT = 5;
 	public static final int PALETTE_BORDER_THICKNESS_DEFAULT = 2;
 	public static final int PALETTE_COLOR_SIZE_DEFAULT = 12;
+	public static String LAST_SAVE_LOCATION;
 
 	private PreferencesData() {
 	}
@@ -57,6 +58,7 @@ public class PreferencesData {
 				CUFF_EDGE = Integer.parseInt(root.getAttributeValue("CUFF_EDGE"));
 				PALETTE_BORDER_THICKNESS = Integer.parseInt(root.getAttributeValue("PALETTE_BORDER_THICKNESS"));
 				PALETTE_COLOR_SIZE = Integer.parseInt(root.getAttributeValue("PALETTE_COLOR_SIZE"));
+				LAST_SAVE_LOCATION = root.getAttributeValue("LAST_SAVE_LOCATION");
 			}
 		} catch (ParsingException | IOException ex) {
 			Logger.getLogger(CuffMain.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,6 +73,7 @@ public class PreferencesData {
 			root.addAttribute(new Attribute("CUFF_EDGE", "" + CUFF_EDGE));
 			root.addAttribute(new Attribute("PALETTE_BORDER_THICKNESS", "" + PALETTE_BORDER_THICKNESS));
 			root.addAttribute(new Attribute("PALETTE_COLOR_SIZE", "" + PALETTE_COLOR_SIZE));
+			root.addAttribute(new Attribute("LAST_SAVE_LOCATION", LAST_SAVE_LOCATION));
 			try {
 				Document doc = new Document(root);
 				File file = new File("preferences.ini");
