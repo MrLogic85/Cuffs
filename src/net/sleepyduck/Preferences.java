@@ -210,14 +210,11 @@ public class Preferences extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jButtonRestoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRestoreActionPerformed
-        PreferencesData.CUFF_COLOR_SIZE = PreferencesData.CUFF_COLOR_SIZE_DEFAULT;
-		PreferencesData.CUFF_COLOR_SIZE_EDIT = PreferencesData.CUFF_COLOR_SIZE_EDIT_DEFAULT;
-		PreferencesData.CUFF_COLOR_GAP = PreferencesData.CUFF_COLOR_GAP_DEFAULT;
-		PreferencesData.PALETTE_COLOR_SIZE = PreferencesData.PALETTE_COLOR_SIZE_DEFAULT;
-		PreferencesData.PALETTE_BORDER_THICKNESS = PreferencesData.PALETTE_BORDER_THICKNESS_DEFAULT;
-		restore();
-		colors.revalidate();
-		tabbs.getSelectedComponent().revalidate();
+		cuffColorSize.setValue(PreferencesData.CUFF_COLOR_SIZE_DEFAULT);
+		cuffEditSize.setValue(PreferencesData.CUFF_COLOR_SIZE_EDIT_DEFAULT);
+		cuffColorGap.setValue(PreferencesData.CUFF_COLOR_GAP_DEFAULT);
+		paletteColorSize.setValue(PreferencesData.PALETTE_COLOR_SIZE_DEFAULT);
+		paletteColorBorderThickness.setValue(PreferencesData.PALETTE_BORDER_THICKNESS_DEFAULT);
     }//GEN-LAST:event_jButtonRestoreActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

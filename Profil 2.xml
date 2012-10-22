@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<CuffSet>
+    <Cuff name="1" worms="54" rows="54">
+        <Yarn repeatH="1" repeatV="0">
+            <Pos row="0" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="13" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="15" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="16" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="17" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="18" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="19" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="20" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="21" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="22" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="23" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="24" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="25" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="26" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="27" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="28" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="29" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="30" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="31" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="32" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="33" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="34" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="35" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="36" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="37" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="38" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="39" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="40" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="41" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="42" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="43" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="44" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="45" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="46" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="47" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="48" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="49" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="50" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="51" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="52" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="53" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"/>
+                </CuffColor>
+            </Pos>
+        </Yarn>
+        <Beads repeatH="0" repeatV="12">
+            <Pos row="0" col="2">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="4">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="10">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="12">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="1">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="3">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="5">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="9">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="11">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="13">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="2">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="4">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="10">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="12">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="6">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="8">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="5">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="7">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="9">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="6">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="8">
+                <CuffColor name="1 Röd olja" id="364c544b-1e38-4851-80d2-49c4164c0393">
+                    <Color red="204" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+        </Beads>
+    </Cuff>
+    <Cuff name="2" worms="56" rows="54">
+        <Yarn repeatH="1" repeatV="0">
+            <Pos row="0" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="13" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="15" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="16" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="17" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="18" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="19" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="20" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="21" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="22" col="0">
+                <CuffColor name="Svart" id="75b379c2-20fa-4829-a3da-df0faacb3b81">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="23" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="24" col="0">
+                <CuffColor name="Svart" id="75b379c2-20fa-4829-a3da-df0faacb3b81">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="25" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="26" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="27" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="28" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="29" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="30" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="31" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="32" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="33" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="34" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="35" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="36" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="37" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="38" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="39" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="40" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="41" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="42" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="43" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="44" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="45" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="46" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="47" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="48" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="49" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="50" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="51" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="52" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="53" col="0">
+                <CuffColor name="Mellanblå" id="0d928cf1-ec87-458d-a3c5-a79510b84958">
+                    <Color red="0" green="0" blue="255"/>
+                </CuffColor>
+            </Pos>
+        </Yarn>
+        <Beads repeatH="0" repeatV="12">
+            <Pos row="1" col="5">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="7">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="9">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="11">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="3">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="5">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="7">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="9">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="1">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="3">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="5">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="7">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="3">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="5">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="7">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="9">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="5">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="7">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="9">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="11">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="7">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="9">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="11">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="13">
+                <CuffColor name="5 Svart" id="c021a55f-5c54-44a1-b467-84b81aa28129">
+                    <Color red="0" green="0" blue="0"/>
+                </CuffColor>
+            </Pos>
+        </Beads>
+    </Cuff>
+    <Cuff name="3" worms="56" rows="54">
+        <Yarn repeatH="1" repeatV="8">
+            <Pos row="0" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="0">
+                <CuffColor name="Vitt" id="c13be019-0965-4a96-a448-d22219ce6d15">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="0">
+                <CuffColor name="Mellangrå" id="f7008b99-3908-41b1-abde-302a889ab98a">
+                    <Color red="153" green="153" blue="153"/>
+                </CuffColor>
+            </Pos>
+        </Yarn>
+        <Beads repeatH="0" repeatV="8">
+            <Pos row="2" col="1">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="3">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="6">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="10">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="14">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="17">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="19">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="1">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="3">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="6">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="10">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="14">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="17">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="19">
+                <CuffColor name="6 Pärlvit" id="90e135f3-eb71-41c6-bc82-4ede3bc1053a">
+                    <Color red="255" green="255" blue="255"/>
+                </CuffColor>
+            </Pos>
+        </Beads>
+    </Cuff>
+</CuffSet>

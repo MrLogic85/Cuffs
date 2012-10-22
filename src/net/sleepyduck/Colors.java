@@ -167,13 +167,14 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 
 	private void changeColor(CuffColor color) {
 		colorToChange = color;
+		colorChooser.setColor(colorToChange.getColor());
 		dlg.setVisible(true);
 	}
 
 	private void sortColors(Comparator<Component> comparator) {
 		Component[] components = colorPanel.getComponents();
-		colorPanel.removeAll();
 		Arrays.sort(components, comparator);
+		colorPanel.removeAll();
 		for (Component cmp : components) {
 			colorPanel.add(cmp);
 		}
@@ -504,7 +505,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				weights[1][TURQUOISEBLACK] = weight[1];
 
 				// REMOVE SOME COLORS IF PALETTE IS SMALL
-				if (colorPanel.getComponents().length < 30) {
+				if (colorPanel.getComponents().length < 10) {
 					weights[0][WHITEYELLOW] = Integer.MAX_VALUE;
 					weights[0][YELLOWBLACK] = Integer.MAX_VALUE;
 					weights[0][WHITEPURPLE] = Integer.MAX_VALUE;
@@ -527,28 +528,28 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 			private int[] getColorWeightHigh(int any, int low1, int low2) {
 				int[] weights = new int[2];
 				weights[0] = 1 + (low1 + low2); //1 Because 0 0 0 should yield geyscale
-				weights[1] = low1 + low2 - any;
+				weights[1] = -low1 - low2 - any;
 				return weights;
 			}
 
 			private int[] getColorWeightLow(int any, int high1, int high2) {
 				int[] weights = new int[2];
 				weights[0] = 1 + (255 - high1 + 255 - high2); //1 Because 0 0 0 should yield geyscale
-				weights[1] = 255 - high1 + 255 - high2 - any;
+				weights[1] = -high1 - high2 - any;
 				return weights;
 			}
 
 			private int[] getComboColorWeightHigh(int high, int any1, int any2) {
 				int[] weights = new int[2];
 				weights[0] = 1 + Math.abs(any1 - any2) + (255 - high);
-				weights[1] = 255 - any1 + 255 - any2 - high;
+				weights[1] = -any1 - any2 - high;
 				return weights;
 			}
 
 			private int[] getComboColorWeightLow(int low, int any1, int any2) {
 				int[] weights = new int[2];
 				weights[0] = 1 + Math.abs(any1 - any2) + low;
-				weights[1] = 255 - any1 + 255 - any2 - low;
+				weights[1] = -any1 - any2 - low;
 				return weights;
 			}
 			// </editor-fold>
@@ -600,8 +601,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				FileInputStream fis = new FileInputStream(file);
 				Document doc = parser.build(fis);
 
-				Element cuffEle, color;
-				int r, g, b;
+				Element cuffEle;
 				Element root = doc.getRootElement();
 				CuffColor cuff;
 				Elements elements = root.getChildElements("CuffColor");

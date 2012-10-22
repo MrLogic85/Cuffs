@@ -7,6 +7,7 @@ package net.sleepyduck;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -227,11 +228,15 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 				graphics.fillRect(col * (colorSize + gap) + PreferencesData.CUFF_EDGE, row * (colorSize + gap) + hGap, colorSize, colorSize);
 			}
 		}
+		int _x, _y;
 		for (int row = 0; row < beads.length; ++row) {
 			for (int col = 0; col < beads[row].length; ++col) {
 				if (beads[row][col] != null) {
 					graphics.setColor(beads[row][col].getColor());
-					graphics.fillOval(col * (colorSize + gap) + PreferencesData.CUFF_EDGE + colorSize / 2, row * (colorSize + gap) + hGap, colorSize, colorSize);
+					_x = col * (colorSize + gap) + PreferencesData.CUFF_EDGE + colorSize / 2;
+					_y = row * (colorSize + gap) + hGap;
+					graphics.setColor(beads[row][col].getColor());
+					graphics.fillOval(_x + 1, _y + 1, colorSize - 2, colorSize - 2);
 				}
 			}
 		}

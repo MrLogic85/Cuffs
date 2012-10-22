@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<CuffSet>
+    <Cuff name="1" worms="62" rows="54">
+        <Yarn repeatH="1" repeatV="2">
+            <Pos row="0" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="0">
+                <CuffColor name="Antracitgrå" id="326a7edd-ea33-4e1c-8379-eb8db8566b2a">
+                    <Color red="51" green="51" blue="51"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+        </Yarn>
+        <Beads repeatH="0" repeatV="16">
+            <Pos row="0" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="8">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="10">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="12">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="16">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="18">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="20">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="10">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="12">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="18">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="20">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="12">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="20">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="10">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="12">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="18">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="20">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="8">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="10">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="12">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="16">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="18">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="20">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="8">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="10">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="16">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="18">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="8">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="16">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="8">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="10">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="16">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="18">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="255"/>
+                </CuffColor>
+            </Pos>
+        </Beads>
+    </Cuff>
+    <Cuff name="2" worms="54" rows="56">
+        <Yarn repeatH="1" repeatV="2">
+            <Pos row="0" col="0">
+                <CuffColor name="Svart" id="75b379c2-20fa-4829-a3da-df0faacb3b81">
+                    <Color red="0" green="0" blue="0" alpha="255"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="0">
+                <CuffColor name="Svart" id="75b379c2-20fa-4829-a3da-df0faacb3b81">
+                    <Color red="0" green="0" blue="0" alpha="255"/>
+                </CuffColor>
+            </Pos>
+        </Yarn>
+        <Beads repeatH="0" repeatV="0">
+            <Pos row="0" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="0" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="0">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="1" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="2" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="3" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="4" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="5" col="2">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="6" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="7" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="8" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="9" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="10" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="0">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="11" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="12" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="13" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="13" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="14" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="15" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="15" col="2">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="16" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="16" col="6">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="17" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="17" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="18" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="18" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="19" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="19" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="20" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="20" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="21" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="21" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="22" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="22" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="23" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="23" col="2">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="24" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="24" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="25" col="0">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="25" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="26" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="26" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="27" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="27" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="28" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="28" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="29" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="29" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="30" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="30" col="6">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="31" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="31" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="32" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="32" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="33" col="0">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="33" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="34" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="34" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="35" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="35" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="36" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="36" col="6">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="37" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="37" col="2">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="38" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="38" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="39" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="39" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="40" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="40" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="41" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="41" col="2">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="42" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="42" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="43" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="43" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="44" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="44" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="45" col="0">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="45" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="46" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="46" col="6">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="47" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="47" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="48" col="4">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="48" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="49" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="49" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="50" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="50" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="51" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="51" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="52" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="52" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="53" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="53" col="2">
+                <CuffColor name="7 Röd transparent" id="70a24271-14d4-4383-848f-724bed4a717e">
+                    <Color red="255" green="51" blue="51"
+                    alpha="188"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="54" col="4">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="54" col="6">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="55" col="0">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+            <Pos row="55" col="2">
+                <CuffColor name="3 Transparent vit" id="54d48104-07f0-411e-8ced-4d88ef57d3f3">
+                    <Color red="255" green="255" blue="255"
+                    alpha="175"/>
+                </CuffColor>
+            </Pos>
+        </Beads>
+    </Cuff>
+</CuffSet>

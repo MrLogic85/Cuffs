@@ -262,6 +262,10 @@ public class CuffMain extends javax.swing.JFrame {
 				saveToFile(theFileToSave, cuffTab);
 				cuffTab.setFilePath(filePath);
 				jTabbedPaneCuffs.setTitleAt(jTabbedPaneCuffs.getSelectedIndex(), filePath.getFileName().toString().split("\\.")[0]);
+				String path = filePath.toString();
+				path = path.substring(0, path.lastIndexOf('\\'));
+				PreferencesData.LAST_SAVE_LOCATION = path;
+				PreferencesData.save();
 			}
 		}
     }//GEN-LAST:event_jMenuItemSaveAsActionPerformed
