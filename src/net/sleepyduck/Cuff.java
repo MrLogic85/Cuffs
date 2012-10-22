@@ -26,8 +26,8 @@ import nu.xom.Elements;
 public class Cuff extends javax.swing.JPanel implements MouseMotionListener, MouseListener {
 
 	public static final int MIN_WIDTH = 115;
-	private int rows = 54;
-	private int worms = 56;
+	private int rows = 56;
+	private int worms = 54;
 	private int repeatYarnH = 1;
 	private int repeatYarnV = 2;
 	private int repeatBeadsH = 0;
@@ -314,6 +314,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 			row = Integer.parseInt(pos.getAttributeValue("row"));
 			col = Integer.parseInt(pos.getAttributeValue("col"));
 			beads[row][col] = new CuffColor(pos.getFirstChildElement("CuffColor"));
+			beads[row][col] = colors.tryReplace(beads[row][col]);
 		}
 		designSizeChanged();
 	}

@@ -42,7 +42,12 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 		int r = Integer.parseInt(color.getAttributeValue("red"));
 		int g = Integer.parseInt(color.getAttributeValue("green"));
 		int b = Integer.parseInt(color.getAttributeValue("blue"));
-		setColor(new Color(r, g, b));
+		int a = 255;
+		String alpha = color.getAttributeValue("alpha");
+		if (alpha != null) {
+			a = Integer.parseInt(alpha);
+		}
+		setColor(new Color(r, g, b, a));
 		setToolTipText(cuffEle.getAttributeValue("name"));
 	}
 
@@ -54,6 +59,7 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 		color.addAttribute(new Attribute("red", "" + getColor().getRed()));
 		color.addAttribute(new Attribute("green", "" + getColor().getGreen()));
 		color.addAttribute(new Attribute("blue", "" + getColor().getBlue()));
+		color.addAttribute(new Attribute("alpha", "" + getColor().getAlpha()));
 		cuffEle.appendChild(color);
 		return cuffEle;
 	}
@@ -91,7 +97,7 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 	public String toString() {
 		return getToolTipText();
 	}
-	
+
 	@Override
 	public void revalidate() {
 		borderSelected = new BorderUIResource.LineBorderUIResource(Color.BLACK, PreferencesData.PALETTE_BORDER_THICKNESS);
@@ -99,7 +105,7 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 		updateBorder();
 		super.revalidate();
 	}
-	
+
 	private void updateBorder() {
 		setBorder(_isSelected ? borderSelected : borderNotSelected);
 	}

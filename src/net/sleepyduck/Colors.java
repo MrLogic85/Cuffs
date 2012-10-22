@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import nu.xom.Attribute;
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -219,10 +220,10 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				}
 				lastColor = (CuffColor) me.getComponent();
 				lastColor.setIsSelected(true);
-				if (lastColor instanceof EraseColor) {
-					previewPanel.setBackground(null);
+				if (!(lastColor instanceof EraseColor)) {
+					previewPanel.setColor(lastColor.getColor());
 				} else {
-					previewPanel.setBackground(lastColor.getColor());
+					previewPanel.setColor(null);
 				}
 			}
 		}
@@ -298,7 +299,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
         jButtonOrderColor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         colorPanel = new javax.swing.JPanel();
-        previewPanel = new javax.swing.JPanel();
+        previewPanel = new net.sleepyduck.ColorsPreview();
 
         setMinimumSize(new java.awt.Dimension(200, 200));
 
@@ -431,6 +432,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				}
 			}
 
+			// <editor-fold defaultstate="collapsed" desc="Sorting Functions">	
 			private int[] getBiggest(int[] numbers) {
 				int length = numbers.length;
 				int[] colorsSorted = Arrays.copyOf(numbers, length);
@@ -549,6 +551,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				weights[1] = 255 - any1 + 255 - any2 - low;
 				return weights;
 			}
+			// </editor-fold>
 		});
     }//GEN-LAST:event_jButtonOrderColorMouseClicked
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -557,7 +560,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
     private javax.swing.JButton jButtonOrderColor;
     private javax.swing.JButton jButtonOrderName;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel previewPanel;
+    private net.sleepyduck.ColorsPreview previewPanel;
     private javax.swing.JButton removeColorButton;
     // End of variables declaration//GEN-END:variables
 
@@ -577,7 +580,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 			}
 			try {
 				Document doc = new Document(root);
-				File file = new File("settings.ini");
+				File file = new File("palette.ini");
 				file.createNewFile();
 				Serializer serializer = new Serializer(new FileOutputStream(file), "ISO-8859-1");
 				serializer.setIndent(4);
@@ -591,7 +594,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 
 	private void load() {
 		try {
-			File file = new File("settings.ini");
+			File file = new File("palette.ini");
 			if (file.exists()) {
 				Builder parser = new Builder();
 				FileInputStream fis = new FileInputStream(file);

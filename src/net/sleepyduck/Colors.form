@@ -148,7 +148,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="previewPanel">
+    <Container class="net.sleepyduck.ColorsPreview" name="previewPanel">
 
       <Layout>
         <DimensionLayout dim="0">
