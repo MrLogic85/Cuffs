@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.UUID;
+import javax.swing.JTabbedPane;
 import javax.swing.plaf.BorderUIResource;
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -19,14 +20,13 @@ import nu.xom.Element;
 public class CuffColor extends javax.swing.JPanel implements Comparable<Object> {
 
 	private boolean _isSelected;
-	private int _borderThickness = 2;
-	private int _defaultSize = 8;
 	private UUID _id;
+	private static BorderUIResource.LineBorderUIResource borderSelected;
+	private BorderUIResource.LineBorderUIResource borderNotSelected;
 
 	public CuffColor() {
 		_isSelected = false;
-		setBackground(Color.WHITE);
-		setBorder(new BorderUIResource.LineBorderUIResource(Color.WHITE, _borderThickness));
+		setColor(Color.WHITE);
 		_id = UUID.randomUUID();
 	}
 
@@ -42,8 +42,7 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 		int r = Integer.parseInt(color.getAttributeValue("red"));
 		int g = Integer.parseInt(color.getAttributeValue("green"));
 		int b = Integer.parseInt(color.getAttributeValue("blue"));
-		setBackground(new Color(r, g, b));
-		setBorder(new BorderUIResource.LineBorderUIResource(new Color(r, g, b), _borderThickness));
+		setColor(new Color(r, g, b));
 		setToolTipText(cuffEle.getAttributeValue("name"));
 	}
 
@@ -61,7 +60,7 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 
 	public void setIsSelected(boolean b) {
 		_isSelected = b;
-		setBorder(new BorderUIResource.LineBorderUIResource((b ? Color.BLACK : getColor()), _borderThickness));
+		updateBorder();
 	}
 
 	public UUID getId() {
@@ -75,17 +74,34 @@ public class CuffColor extends javax.swing.JPanel implements Comparable<Object> 
 
 	@Override
 	public Dimension getPreferredSize() {
-		return new Dimension(_defaultSize + _borderThickness * 2, _defaultSize + _borderThickness * 2);
+		return new Dimension(PreferencesData.PALETTE_COLOR_SIZE, PreferencesData.PALETTE_COLOR_SIZE);
 	}
 
-	public void setColor(Color color) {
+	/**
+	 *
+	 * @param color
+	 */
+	public final void setColor(Color color) {
 		setBackground(color);
-		setBorder(new BorderUIResource.LineBorderUIResource(_isSelected ? Color.BLACK : color, _borderThickness));
+		borderNotSelected = new BorderUIResource.LineBorderUIResource(color, PreferencesData.PALETTE_BORDER_THICKNESS);
+		updateBorder();
 	}
 
 	@Override
 	public String toString() {
 		return getToolTipText();
+	}
+	
+	@Override
+	public void revalidate() {
+		borderSelected = new BorderUIResource.LineBorderUIResource(Color.BLACK, PreferencesData.PALETTE_BORDER_THICKNESS);
+		borderNotSelected = new BorderUIResource.LineBorderUIResource(getColor(), PreferencesData.PALETTE_BORDER_THICKNESS);
+		updateBorder();
+		super.revalidate();
+	}
+	
+	private void updateBorder() {
+		setBorder(_isSelected ? borderSelected : borderNotSelected);
 	}
 
 	@Override

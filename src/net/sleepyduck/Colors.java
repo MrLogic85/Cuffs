@@ -76,21 +76,6 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		try {
 			addEraseColor();
 			load();
-			/*for (int i = 0; i < 600; ++i) {
-				CuffColor cuff = new CuffColor();
-				Color color = new Color((int) (256 * Math.random()), (int) (256 * Math.random()), (int) (256 * Math.random()));
-				cuff.setToolTipText(color.toString());
-				cuff.setColor(color);
-				addNewColor(cuff, cuff.toString());
-			}
-			for (int i = 0; i < 6; ++i) {
-				CuffColor cuff = new CuffColor();
-				Color color = new Color(i * 51, i * 51, i * 51);
-				cuff.setToolTipText(color.toString());
-				cuff.setColor(color);
-				addNewColor(cuff, cuff.toString());
-			}*/
-
 		} catch (IOException ex) {
 			Logger.getLogger(Colors.class.getName()).log(Level.SEVERE, null, ex);
 		}
@@ -186,6 +171,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 
 	private void sortColors(Comparator<Component> comparator) {
 		Component[] components = colorPanel.getComponents();
+		colorPanel.removeAll();
 		Arrays.sort(components, comparator);
 		for (Component cmp : components) {
 			colorPanel.add(cmp);
@@ -193,6 +179,16 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 		revalidate();
 		repaint();
 		save();
+	}
+
+	@Override
+	public void revalidate() {
+		if (colorPanel != null) {
+			for (Component cmp : colorPanel.getComponents()) {
+				cmp.revalidate();
+			}
+		}
+		super.revalidate();
 	}
 
 	@Override
@@ -223,6 +219,11 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				}
 				lastColor = (CuffColor) me.getComponent();
 				lastColor.setIsSelected(true);
+				if (lastColor instanceof EraseColor) {
+					previewPanel.setBackground(null);
+				} else {
+					previewPanel.setBackground(lastColor.getColor());
+				}
 			}
 		}
 	}
@@ -297,6 +298,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
         jButtonOrderColor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         colorPanel = new javax.swing.JPanel();
+        previewPanel = new javax.swing.JPanel();
 
         setMinimumSize(new java.awt.Dimension(200, 200));
 
@@ -339,19 +341,35 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
         colorPanel.setLayout(new net.sleepyduck.WrapLayout());
         jScrollPane1.setViewportView(colorPanel);
 
+        javax.swing.GroupLayout previewPanelLayout = new javax.swing.GroupLayout(previewPanel);
+        previewPanel.setLayout(previewPanelLayout);
+        previewPanelLayout.setHorizontalGroup(
+            previewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        previewPanelLayout.setVerticalGroup(
+            previewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 16, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jButtonOrderName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonOrderColor))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jScrollPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonOrderName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonOrderColor))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(previewPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,7 +380,8 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(addColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(removeColorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(previewPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
         );
@@ -409,19 +428,6 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 					} else {
 						return weight1[0] - weight2[0];
 					}
-					/*int[] dominantT1 = getBiggest(colort1);
-					 int[] dominantT2 = getBiggest(colort2);
-					 if (dominantT1[0] != dominantT2[0]) {
-					 return dominantT1[0] - dominantT2[0];
-					 } else if (dominantT1[1] != dominantT2[1]) {
-					 return dominantT1[1] - dominantT2[1];
-					 } else {
-					 return t2.getBackground().getRGB() - t1.getBackground().getRGB();
-					 //return (colort2[dominantT1[0]] - colort1[dominantT1[0]]) + (colort2[dominantT1[1]] - colort1[dominantT1[1]]) + (colort2[dominantT1[2]] - colort1[dominantT1[2]]);
-					 //return colort2[dominantT2[2]] - colort1[dominantT1[2]];
-					 //return (colort2[dominantT2[1]] - colort2[dominantT2[2]]) - (colort1[dominantT1[1]] - colort1[dominantT1[2]]);
-					 //return (colort2[dominantT1[0]] - colort1[dominantT1[0]]) / 26 * 100 + (colort2[dominantT1[1]] - colort1[dominantT1[1]]) / 26 * 10 + (colort2[dominantT1[2]] - colort1[dominantT1[2]]) / 26;
-					 }*/
 				}
 			}
 
@@ -509,9 +515,6 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
 				return new int[]{maxColor, weights[1][maxColor]};
 			}
 
-			/*private int getColorWeight(int[] color, int r, int g, int b) {
-			 return Math.abs(color[0] - 255 * r) + Math.abs(color[1] - 255 * g) + Math.abs(color[2] - 255 * b);
-			 }*/
 			private int[] getGreyscaleWeights(int[] color) {
 				int[] weights = new int[2];
 				weights[0] = (Math.abs(color[0] - color[1]) + Math.abs(color[1] - color[2]) + Math.abs(color[2] - color[0])) * 3;
@@ -554,6 +557,7 @@ public class Colors extends javax.swing.JPanel implements MouseListener {
     private javax.swing.JButton jButtonOrderColor;
     private javax.swing.JButton jButtonOrderName;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel previewPanel;
     private javax.swing.JButton removeColorButton;
     // End of variables declaration//GEN-END:variables
 

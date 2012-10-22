@@ -8,7 +8,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -21,13 +20,20 @@ public class EraseColor extends CuffColor {
 	public EraseColor() throws IOException {
 		super();
 		setBackground(Color.WHITE);
-		image = ImageIO.read(getClass().getResource("/icons/Erase.png"));
 	}
 
 	@Override
 	public void paint(Graphics graphics) {
 		super.paint(graphics);
-		graphics.drawImage(image, 2, 2, null);
+		graphics.setColor(Color.BLACK);
+		int _width = PreferencesData.PALETTE_COLOR_SIZE / 10;
+		int[] X1 = {_width, _width + _width, getWidth() - _width, getWidth() - _width, getWidth() - _width - _width, _width};
+		int[] X2 = {getWidth() - _width, getWidth() - _width - _width, _width, _width, _width + _width, getWidth() - _width};
+		int[] Y = {_width, _width, getHeight() - _width - _width, getHeight() - _width, getHeight() - _width, _width + _width};
+		graphics.drawPolygon(X1, Y, Y.length);
+		graphics.fillPolygon(X1, Y, Y.length);
+		graphics.drawPolygon(X2, Y, Y.length);
+		graphics.fillPolygon(X2, Y, Y.length);
 	}
 
 	/**

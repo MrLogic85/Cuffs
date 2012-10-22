@@ -7,16 +7,13 @@ package net.sleepyduck;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -28,11 +25,7 @@ import nu.xom.Elements;
  */
 public class Cuff extends javax.swing.JPanel implements MouseMotionListener, MouseListener {
 
-	private static int UNIT_SQARE = 10;
-	private static int UNIT_GAP = 0;
-	private static int UNIT_GAP_DEFAULT = 1;
-	private static int UNIT_EDGE = 5;
-	private static int MIN_WIDTH = 115;
+	public static final int MIN_WIDTH = 115;
 	private int rows = 54;
 	private int worms = 56;
 	private int repeatYarnH = 1;
@@ -63,9 +56,11 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 
 	@Override
 	public Dimension getPreferredSize() {
-		int maxWidth = worms * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE * 2 > MIN_WIDTH ? worms * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE * 2 : MIN_WIDTH;
+		int gap = getGap();
+		int colorSize = getColorSize();
+		int maxWidth = worms * (colorSize + gap) + PreferencesData.CUFF_EDGE * 2 > MIN_WIDTH ? worms * (colorSize + gap) + PreferencesData.CUFF_EDGE * 2 : MIN_WIDTH;
 		setSize(maxWidth, 0);
-		return new Dimension(maxWidth, getLayout().preferredLayoutSize(this).height + rows * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE * 2);
+		return new Dimension(maxWidth, getLayout().preferredLayoutSize(this).height + rows * (colorSize + gap) + PreferencesData.CUFF_EDGE * 2);
 	}
 
 	private void updateLayout() {
@@ -85,12 +80,14 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 	@Override
 	public void mouseDragged(MouseEvent me) {
 		if ((me.getModifiersEx() & (MouseEvent.BUTTON1_DOWN_MASK | MouseEvent.BUTTON3_DOWN_MASK)) > 0 || me.getButton() == MouseEvent.BUTTON1 || me.getButton() == MouseEvent.BUTTON3) {
-			if (me.getY() > getHeight() - rows * (UNIT_SQARE + UNIT_GAP) - UNIT_EDGE) { // TODO, check square
+			int gap = getGap();
+			int colorSize = getColorSize();
+			if (me.getY() > getHeight() - rows * (colorSize + gap) - PreferencesData.CUFF_EDGE) { // TODO, check square
 				if ((me.getModifiersEx() & MouseEvent.BUTTON1_DOWN_MASK) > 0 || me.getButton() == MouseEvent.BUTTON1) {
 					int repeatRows = (repeatYarnV == 0 || repeatYarnV > rows) ? rows : repeatYarnV;
 					int repeatCols = (repeatYarnH == 0 || repeatYarnH > worms) ? worms : repeatYarnH;
-					int row = (me.getY() - getHeight() + rows * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE) / (UNIT_SQARE + UNIT_GAP);
-					int col = (me.getX() - UNIT_EDGE) / (UNIT_SQARE + UNIT_GAP);
+					int row = (me.getY() - getHeight() + rows * (colorSize + gap) + PreferencesData.CUFF_EDGE) / (colorSize + gap);
+					int col = (me.getX() - PreferencesData.CUFF_EDGE) / (colorSize + gap);
 					if (row < rows && col < worms) {
 						Element before = getSaveData();
 						setColor(yarn, colors.getSelectedColor(), row % repeatRows, col % repeatCols, repeatRows, repeatCols);
@@ -103,8 +100,8 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 				} else if ((me.getModifiersEx() & MouseEvent.BUTTON3_DOWN_MASK) > 0 || me.getButton() == MouseEvent.BUTTON3) {
 					int repeatRows = (repeatBeadsV == 0 || repeatBeadsV > rows) ? rows : repeatBeadsV;
 					int repeatCols = (repeatBeadsH == 0 || repeatBeadsH > worms - 1) ? worms - 1 : repeatBeadsH;
-					int row = (me.getY() - getHeight() + rows * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE) / (UNIT_SQARE + UNIT_GAP);
-					int col = (me.getX() - UNIT_EDGE - UNIT_SQARE / 2) / (UNIT_SQARE + UNIT_GAP);
+					int row = (me.getY() - getHeight() + rows * (colorSize + gap) + PreferencesData.CUFF_EDGE) / (colorSize + gap);
+					int col = (me.getX() - PreferencesData.CUFF_EDGE - colorSize / 2) / (colorSize + gap);
 					if (row < rows && col < worms) {
 						Element before = getSaveData();
 						setColor(beads, colors.getSelectedColor(), row % repeatRows, col % repeatCols, repeatRows, repeatCols);
@@ -152,6 +149,14 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 		for (ChangeListener cl : changeListeners) {
 			cl.stateChanged(new DataChangeEvent(this, ele));
 		}
+	}
+
+	private int getGap() {
+		return editCheckBox.isSelected() ? PreferencesData.CUFF_COLOR_GAP : 0;
+	}
+
+	private int getColorSize() {
+		return editCheckBox.isSelected() ? PreferencesData.CUFF_COLOR_SIZE_EDIT : PreferencesData.CUFF_COLOR_SIZE;
 	}
 
 	private void designSizeChanged() {
@@ -208,7 +213,10 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 	@Override
 	public void paint(Graphics graphics) {
 		super.paint(graphics);
-		int hGap = getHeight() - rows * (UNIT_SQARE + UNIT_GAP) - UNIT_EDGE;
+		int gap = getGap();
+		int colorSize = getColorSize();
+		int hGap = getHeight() - rows * (colorSize + gap) - PreferencesData.CUFF_EDGE;
+
 		for (int row = 0; row < yarn.length; ++row) {
 			for (int col = 0; col < yarn[row].length; ++col) {
 				if (yarn[row][col] != null) {
@@ -216,14 +224,14 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 				} else {
 					graphics.setColor(Color.LIGHT_GRAY);
 				}
-				graphics.fillRect(col * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE, row * (UNIT_SQARE + UNIT_GAP) + hGap, UNIT_SQARE, UNIT_SQARE);
+				graphics.fillRect(col * (colorSize + gap) + PreferencesData.CUFF_EDGE, row * (colorSize + gap) + hGap, colorSize, colorSize);
 			}
 		}
 		for (int row = 0; row < beads.length; ++row) {
 			for (int col = 0; col < beads[row].length; ++col) {
 				if (beads[row][col] != null) {
 					graphics.setColor(beads[row][col].getColor());
-					graphics.fillOval(col * (UNIT_SQARE + UNIT_GAP) + UNIT_EDGE + UNIT_SQARE / 2, row * (UNIT_SQARE + UNIT_GAP) + hGap, UNIT_SQARE, UNIT_SQARE);
+					graphics.fillOval(col * (colorSize + gap) + PreferencesData.CUFF_EDGE + colorSize / 2, row * (colorSize + gap) + hGap, colorSize, colorSize);
 				}
 			}
 		}
@@ -245,10 +253,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 					pos = new Element("Pos");
 					pos.addAttribute(new Attribute("row", "" + row));
 					pos.addAttribute(new Attribute("col", "" + col));
-					color = yarn[row][col].getSaveData(); //new Element("Color");
-					/*color.addAttribute(new Attribute("red", "" + yarn[row][col].getColor().getRed()));
-					 color.addAttribute(new Attribute("green", "" + yarn[row][col].getColor().getGreen()));
-					 color.addAttribute(new Attribute("blue", "" + yarn[row][col].getColor().getBlue()));*/
+					color = yarn[row][col].getSaveData();
 					pos.appendChild(color);
 					tmp.appendChild(pos);
 				}
@@ -265,10 +270,7 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 					pos = new Element("Pos");
 					pos.addAttribute(new Attribute("row", "" + row));
 					pos.addAttribute(new Attribute("col", "" + col));
-					color = beads[row][col].getSaveData();/*new Element("Color");
-					 color.addAttribute(new Attribute("red", "" + beads[row][col].getColor().getRed()));
-					 color.addAttribute(new Attribute("green", "" + beads[row][col].getColor().getGreen()));
-					 color.addAttribute(new Attribute("blue", "" + beads[row][col].getColor().getBlue()));*/
+					color = beads[row][col].getSaveData();
 					pos.appendChild(color);
 					tmp.appendChild(pos);
 				}
@@ -281,8 +283,8 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
 
 	void load(Element root) {
 		Elements elements;
-		Element tmp, pos, color;
-		int row, col, red, green, blue;
+		Element tmp, pos;
+		int row, col;
 
 		name.setText(root.getAttributeValue("name"));
 		worms = Integer.parseInt(root.getAttributeValue("worms"));
@@ -505,13 +507,9 @@ public class Cuff extends javax.swing.JPanel implements MouseMotionListener, Mou
     }//GEN-LAST:event_nameKeyReleased
 
     private void editCheckBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editCheckBoxMouseClicked
-		UNIT_GAP = editCheckBox.isSelected() ? UNIT_GAP_DEFAULT : 0;
-		if (getTopLevelAncestor() instanceof JFrame) {
-			revalidate();
-			repaint();
-		}
+		revalidate();
+		repaint();
     }//GEN-LAST:event_editCheckBoxMouseClicked
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox editCheckBox;
     private javax.swing.JButton getBeadPatternButton;

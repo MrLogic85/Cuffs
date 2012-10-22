@@ -29,6 +29,7 @@ import nu.xom.Serializer;
 public class CuffMain extends javax.swing.JFrame {
 
 	private JFileChooser fileChooser;
+	private Preferences preferences;
 	private Object CuffTab;
 
 	/**
@@ -36,6 +37,7 @@ public class CuffMain extends javax.swing.JFrame {
 	 */
 	public CuffMain() {
 		initComponents();
+		preferences = new Preferences(colors, jTabbedPaneCuffs);
 		fileChooser = new JFileChooser();
 		fileChooser.resetChoosableFileFilters();
 		fileChooser.setFileFilter(new FileNameExtensionFilter("XML", new String[]{"xml"}));
@@ -80,8 +82,11 @@ public class CuffMain extends javax.swing.JFrame {
         jMenuItemExit = new javax.swing.JMenuItem();
         jMenuEdit = new javax.swing.JMenu();
         jMenuItemCreateCuff = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItemUndo = new javax.swing.JMenuItem();
         jMenuItemRedo = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemPreferences = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -158,6 +163,7 @@ public class CuffMain extends javax.swing.JFrame {
             }
         });
         jMenuEdit.add(jMenuItemCreateCuff);
+        jMenuEdit.add(jSeparator2);
 
         jMenuItemUndo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemUndo.setText("Undo");
@@ -176,6 +182,15 @@ public class CuffMain extends javax.swing.JFrame {
             }
         });
         jMenuEdit.add(jMenuItemRedo);
+        jMenuEdit.add(jSeparator3);
+
+        jMenuItemPreferences.setText("Preferences");
+        jMenuItemPreferences.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPreferencesActionPerformed(evt);
+            }
+        });
+        jMenuEdit.add(jMenuItemPreferences);
 
         jMenuBar.add(jMenuEdit);
 
@@ -189,15 +204,17 @@ public class CuffMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(colors, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPaneCuffs, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+                .addComponent(jTabbedPaneCuffs, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPaneCuffs, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
-                    .addComponent(colors, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTabbedPaneCuffs, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+                    .addComponent(colors, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -295,7 +312,7 @@ public class CuffMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jMenuItemUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUndoActionPerformed
-        Component cmp = jTabbedPaneCuffs.getSelectedComponent();
+		Component cmp = jTabbedPaneCuffs.getSelectedComponent();
 		if (cmp != null && cmp instanceof CuffTab) {
 			CuffTab cTab = (CuffTab) cmp;
 			cTab.undo();
@@ -303,12 +320,16 @@ public class CuffMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemUndoActionPerformed
 
     private void jMenuItemRedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRedoActionPerformed
-        Component cmp = jTabbedPaneCuffs.getSelectedComponent();
+		Component cmp = jTabbedPaneCuffs.getSelectedComponent();
 		if (cmp != null && cmp instanceof CuffTab) {
 			CuffTab cTab = (CuffTab) cmp;
 			cTab.redo();
 		}
     }//GEN-LAST:event_jMenuItemRedoActionPerformed
+
+    private void jMenuItemPreferencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPreferencesActionPerformed
+		preferences.setVisible(true);
+    }//GEN-LAST:event_jMenuItemPreferencesActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -341,6 +362,7 @@ public class CuffMain extends javax.swing.JFrame {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
+				PreferencesData.load();
 				new CuffMain().setVisible(true);
 			}
 		});
@@ -357,11 +379,14 @@ public class CuffMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCreateTab;
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemOpen;
+    private javax.swing.JMenuItem jMenuItemPreferences;
     private javax.swing.JMenuItem jMenuItemRedo;
     private javax.swing.JMenuItem jMenuItemSave;
     private javax.swing.JMenuItem jMenuItemSaveAs;
     private javax.swing.JMenuItem jMenuItemUndo;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPaneCuffs;
     // End of variables declaration//GEN-END:variables
 }

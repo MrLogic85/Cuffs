@@ -94,6 +94,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemCreateCuffActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemUndo">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
@@ -114,6 +116,16 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemRedoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator3">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemPreferences">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Preferences"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemPreferencesActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -150,18 +162,20 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="colors" min="-2" pref="228" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPaneCuffs" pref="556" max="32767" attributes="0"/>
+              <Component id="jTabbedPaneCuffs" pref="546" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTabbedPaneCuffs" pref="568" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jTabbedPaneCuffs" pref="557" max="32767" attributes="0"/>
                   <Component id="colors" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
